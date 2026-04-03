@@ -1,1 +1,35 @@
+/* --- GLOBAL VARIABLES --- */
+:root {
+  /* You can swap these hex codes for your custom palette or stick to UMD Maroon and Gold */
+  --primary-color: #7A0019; /* UMD Maroon */
+  --secondary-color: #FFCC33; /* UMD Gold */
+  
+  /* Neutral colors for backgrounds and text */
+  --bg-light: #F8F9FA;
+  --bg-white: #FFFFFF;
+  --text-dark: #333333;
+  --text-muted: #666666;
 
+  /* Standardizing spacing and borders */
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --border-radius: 8px;
+}
+/* --- UNIVERSAL RESET --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* --- BASE BODY STYLES --- */
+body {
+  /* Using the variables defined in :root */
+  font-family: var(--font-main);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  
+  /* Improves readability by spacing out the lines of text */
+  line-height: 1.6; 
+  
+  /* Prevents horizontal scrolling on smaller screens */
+  overflow-x: hidden; 
+}
