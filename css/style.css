@@ -20,18 +20,13 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* --- BASE BODY STYLES (GRID METHOD) --- */
 body {
-  font-family: var(--font-main);
-  background-color: var(--bg-light);
-  color: var(--text-dark);
-  line-height: 1.6; 
-  overflow-x: hidden; 
-
-  /* The CSS Grid Sticky Footer Setup */
-  display: grid;
-  grid-template-rows: auto 1fr auto; /* Header = auto, Main = 1fr (fills space), Footer = auto */
-  min-height: 100vh; /* Forces the body to be exactly the height of the screen */
+  /* Tells the footer what to anchor itself to */
+  position: relative; 
+  min-height: 100vh; 
+  
+  /* Creates a safe zone at the bottom so text doesn't hide behind the footer */
+  padding-bottom: 150px; 
 }
 
 /* We no longer need flex properties here, just padding! */
@@ -107,11 +102,20 @@ body {
    ========================================= */
 
 .main-footer {
-  background-color: var(--text-dark); /* Dark background for contrast */
+  /* Forces the footer out of the normal layout and pins it to the bottom */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  
+  /* Give it a specific height so the body padding knows how much space to save */
+  height: 100px; 
+  
+  background-color: var(--text-dark);
   color: var(--bg-white);
   text-align: center;
-  padding: 2rem 5%;
-  margin-top: 3rem; /* Pushes the footer down from the main content */
+  /* You can adjust padding here to center your text within the 100px height */
+  padding: 1.5rem 5%; 
 }
 
 .footer-content p {
