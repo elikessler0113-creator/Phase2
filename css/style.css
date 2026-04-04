@@ -229,9 +229,18 @@ body {
   background-color: var(--bg-white);
   padding: 2rem;
   border-radius: var(--border-radius);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  /* Deeper, softer shadow to make it pop */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
   max-width: 400px;
   text-align: center;
+  /* Smooth animation setup for the hover effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* The Hover Effect */
+.summary-card:hover {
+  transform: translateY(-8px); /* Lifts the card up */
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15); /* Makes the shadow larger */
 }
 
 .summary-card h3 {
