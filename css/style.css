@@ -32,6 +32,18 @@ body {
   
   /* Prevents horizontal scrolling on smaller screens */
   overflow-x: hidden; 
+
+  /* NEW: Flexbox Sticky Footer Setup */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Forces the body to be at least 100% of the Viewport Height */
+}
+
+/* --- MAIN CONTENT EXPANDER --- */
+.page-content {
+  /* This '1' tells the main content container to grow to fill any empty space, 
+     which naturally pushes the footer exactly to the bottom. */
+  flex: 1; 
 }
 /* =========================================
    HEADER & NAVIGATION STYLES
