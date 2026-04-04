@@ -145,3 +145,111 @@ body {
 .footer-links span {
   color: var(--text-muted); /* Styles the | dividers */
 }
+/* =========================================
+   HOME PAGE - HERO SECTION
+   ========================================= */
+
+.hero {
+  /* Using UMD Maroon for a strong, branded welcome */
+  background-color: var(--primary-color);
+  color: var(--bg-white);
+  
+  /* Flexbox to perfectly center the text vertically and horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+  /* Makes the banner nice and tall */
+  min-height: 60vh; 
+  padding: 2rem 5%;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  max-width: 600px; /* Prevents the text from stretching too wide on big screens */
+  margin: 0 auto 2rem auto;
+}
+
+/* --- BUTTONS --- */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap; /* Allows buttons to stack on small mobile screens */
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--secondary-color); /* UMD Gold */
+  color: var(--text-dark);
+}
+
+.btn-primary:hover {
+  background-color: #e6b800; /* A slightly darker gold for the hover effect */
+  transform: translateY(-2px); /* Makes the button "lift" slightly when hovered */
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--bg-white);
+  border: 2px solid var(--bg-white);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-white);
+  color: var(--primary-color);
+}
+
+/* =========================================
+   HOME PAGE - QUICK SUMMARY SECTION
+   ========================================= */
+
+.quick-summary {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 4rem 5%;
+  flex-wrap: wrap; /* Allows cards to stack on smaller screens */
+}
+
+.summary-card {
+  background-color: var(--bg-white);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  max-width: 400px;
+  text-align: center;
+}
+
+.summary-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.summary-card p {
+  margin-bottom: 1.5rem;
+  color: var(--text-muted);
+}
+
+.summary-card a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.summary-card a:hover {
+  text-decoration: underline;
+}
