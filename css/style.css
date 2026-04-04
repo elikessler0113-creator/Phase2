@@ -33,3 +33,106 @@ body {
   /* Prevents horizontal scrolling on smaller screens */
   overflow-x: hidden; 
 }
+/* =========================================
+   HEADER & NAVIGATION STYLES
+   ========================================= */
+
+.main-header {
+  /* Flexbox makes the logo and the nav links sit side-by-side */
+  display: flex;
+  justify-content: space-between; /* Pushes logo left, nav right */
+  align-items: center; /* Vertically centers them */
+  
+  /* Adds space inside the header */
+  padding: 1rem 5%; 
+  
+  background-color: var(--bg-white);
+  
+  /* Adds a subtle shadow to separate the header from the page content */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+  
+  /* Makes the header stick to the top when scrolling */
+  position: sticky;
+  top: 0;
+  z-index: 1000; 
+}
+
+/* Sizing the logo image so it doesn't take over the screen */
+.header-logo img {
+  height: 60px;
+  width: auto;
+}
+
+.main-nav {
+  display: flex;
+  gap: 2rem; /* Creates even spacing between each link */
+  align-items: center;
+}
+
+/* Styling the standard navigation links */
+.main-nav a {
+  text-decoration: none; /* Removes the default blue underline */
+  color: var(--text-dark);
+  font-weight: 600;
+  transition: color 0.3s ease; /* Makes the hover effect smooth */
+}
+
+/* Changes text to UMD Maroon when someone hovers over a link */
+.main-nav a:hover {
+  color: var(--primary-color);
+}
+
+/* Special styling for the 'Join / Contact' button */
+.main-nav .nav-btn {
+  background-color: var(--primary-color);
+  color: var(--bg-white);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--border-radius);
+  transition: background-color 0.3s ease;
+}
+
+.main-nav .nav-btn:hover {
+  background-color: var(--secondary-color); /* Turns UMD Gold on hover */
+  color: var(--text-dark);
+}
+
+
+/* =========================================
+   FOOTER STYLES
+   ========================================= */
+
+.main-footer {
+  background-color: var(--text-dark); /* Dark background for contrast */
+  color: var(--bg-white);
+  text-align: center;
+  padding: 2rem 5%;
+  margin-top: 3rem; /* Pushes the footer down from the main content */
+}
+
+.footer-content p {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Flexbox for the contact and social links */
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+}
+
+.footer-links a {
+  color: var(--secondary-color); /* Uses UMD Gold for visibility */
+  text-decoration: none;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+  opacity: 0.8; /* Slightly fades the link when hovered */
+}
+
+.footer-links span {
+  color: var(--text-muted); /* Styles the | dividers */
+}
