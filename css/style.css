@@ -229,12 +229,11 @@ body {
   background-color: var(--bg-white);
   padding: 2rem;
   border-radius: var(--border-radius);
-  /* Deeper, softer shadow to make it pop */
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
   max-width: 400px;
   text-align: center;
-  /* Smooth animation setup for the hover effect */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  /* Adds a thick Maroon stripe to the top edge */
+  border-top: 6px solid var(--primary-color); 
 }
 
 /* The Hover Effect */
