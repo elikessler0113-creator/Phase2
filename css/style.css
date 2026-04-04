@@ -226,14 +226,15 @@ body {
 }
 
 .summary-card {
-  background-color: var(--bg-white);
+  /* A very light, pastel yellow/gold */
+  background-color: #FFFAEB; 
   padding: 2rem;
   border-radius: var(--border-radius);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  /* A solid gold border to frame the box */
+  border: 1px solid var(--secondary-color); 
   max-width: 400px;
   text-align: center;
-  /* Adds a thick Maroon stripe to the top edge */
-  border-top: 6px solid var(--primary-color); 
 }
 
 /* The Hover Effect */
