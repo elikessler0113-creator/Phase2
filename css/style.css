@@ -282,12 +282,11 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Forces the Instagram embed to the dead center */
+/* Safely centers the Instagram embed without using Flexbox */
 .embed-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
+  max-width: 540px; /* Matches Instagram's default maximum width */
+  margin: 0 auto; /* Centers the wrapper perfectly */
 }
 
 /* Forces the actual iframe to fill its new container perfectly */
