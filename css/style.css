@@ -262,3 +262,40 @@ body {
 .summary-card a:hover {
   text-decoration: underline;
 }
+/* =========================================
+   LIVE EMBED SECTION
+   ========================================= */
+
+.live-embed-section {
+  padding: 4rem 5%;
+  text-align: center;
+  background-color: var(--bg-white); /* Keeps alternating background colors */
+}
+
+.live-embed-section h2 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.live-embed-section p {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+/* The Container protects the iframe and gives it a nice frame */
+.iframe-container {
+  width: 100%;
+  max-width: 1000px; /* Prevents it from stretching too wide on giant monitors */
+  height: 600px; /* Gives it plenty of vertical room */
+  margin: 0 auto;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Matches your summary cards! */
+  overflow: hidden; 
+}
+
+/* Forces the actual iframe to fill its new container perfectly */
+.iframe-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none; /* Removes the ugly default border */
+}
