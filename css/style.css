@@ -295,3 +295,95 @@ body {
   height: 100%;
   border: none; /* Removes the ugly default border */
 }
+/* =========================================
+   ABOUT PAGE - INTRO SECTION
+   ========================================= */
+
+.about-intro {
+  padding: 4rem 5%;
+  text-align: center;
+  max-width: 800px; /* Keeps the paragraph from getting too wide and hard to read */
+  margin: 0 auto;
+}
+
+.about-intro h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.about-intro p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+/* =========================================
+   ABOUT PAGE - BOARD SECTION
+   ========================================= */
+
+.board-section {
+  padding: 4rem 5%;
+  text-align: center;
+}
+
+.board-section h2 {
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+/* The CSS Grid for the 4 Vertical Profiles */
+.board-grid {
+  display: grid;
+  /* This creates 4 equal columns */
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual Board Member Cards */
+.board-member {
+  background-color: #FFFAEB; /* The light gold tint */
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border: 1px solid var(--secondary-color);
+}
+
+/* The Vertical Photo Spaces */
+.photo-placeholder {
+  width: 100%;
+  height: 280px; /* Forces a tall, vertical portrait shape */
+  background-color: #e0e0e0; /* A neutral grey placeholder */
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+}
+
+.board-member h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
+  font-size: 1.25rem;
+}
+
+.board-title {
+  color: var(--text-muted);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+
+/* On smaller laptops and tablets, snap to a 2x2 grid */
+@media (max-width: 900px) {
+  .board-grid {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+/* On cell phones, snap to a single vertical column */
+@media (max-width: 600px) {
+  .board-grid {
+    grid-template-columns: 1fr; 
+  }
+}
