@@ -282,9 +282,12 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Centers the Instagram embed automatically */
-.instagram-media {
-  margin: 0 auto !important; 
+/* Forces the Instagram embed to the dead center */
+.embed-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 /* Forces the actual iframe to fill its new container perfectly */
