@@ -363,21 +363,21 @@ body {
   height: 520px; /* Increased from 460px */
 }
 
-/* 2. Add extra padding specifically to the top */
+/* 1. Go back to even padding on all sides */
 .board-card-front {
   justify-content: flex-start; 
-  /* The 4 numbers represent: Top, Right, Bottom, Left */
-  padding: 2rem 1.25rem 1.25rem 1.25rem; 
+  padding: 1.5rem; 
 }
 
-/* 3. Let the image grow a little taller to match the new proportions */
+/* 2. Force the spacing and rounding directly on the image */
 .board-card-front img {
   width: 100%;
-  flex: 0 1 auto; 
-  min-height: 180px; 
-  max-height: 260px; /* Increased so the photo doesn't look too tiny in the taller card */
+  height: 200px; /* Lock the height so it fits predictably */
   object-fit: cover;
-  border-radius: var(--border-radius);
+  
+  /* THE FIXES: */
+  margin-top: 1rem; /* Pushes the image strictly away from the top edge */
+  border-radius: 12px !important; /* Forces the browser to round the corners, ignoring the 3D bug */
   margin-bottom: 1rem;
 }
 
