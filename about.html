@@ -66,7 +66,60 @@
 
       </div>
     </section>
+<section class="qa-section">
+      <h2>Frequently Asked Questions</h2>
+      <p>Click any card to reveal the answer!</p>
+      
+      <div class="qa-grid">
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3>Who can join the club?</h3>
+              <p class="click-hint">(Click to flip)</p>
+            </div>
+            <div class="flip-card-back">
+              <p>Anyone! While we focus on MIS and Business Analytics, students from all majors at UMD who are interested in the intersection of business and technology are welcome to join.</p>
+            </div>
+          </div>
+        </div>
 
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3>When do you meet?</h3>
+              <p class="click-hint">(Click to flip)</p>
+            </div>
+            <div class="flip-card-back">
+              <p>We typically meet every other Wednesday evening in LSBE. Check out our Upcoming Events page or our Instagram for exact dates and room numbers!</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3>Do I need coding experience?</h3>
+              <p class="click-hint">(Click to flip)</p>
+            </div>
+            <div class="flip-card-back">
+              <p>Not at all! We host beginner-friendly workshops to help you build your technical skills from scratch, whether that is Excel, SQL, or web development.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <script>
+      const cards = document.querySelectorAll('.flip-card');
+      cards.forEach(card => {
+        card.addEventListener('click', () => {
+          card.classList.toggle('is-flipped');
+        });
+      });
+    </script>
+  
   </main>
   </main>
 
