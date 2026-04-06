@@ -340,37 +340,50 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
+/* =========================================
+   ABOUT PAGE - BOARD FLIP CARDS
+   ========================================= */
 
-/* Individual Board Member Cards */
-.board-member {
-  background-color: #FFFAEB; /* The light gold tint */
-  padding: 1.5rem;
+/* Makes the board cards taller than the FAQ cards */
+.board-flip-card {
+  height: 400px; 
+}
+
+/* Modifies the front of the board card so the photo stays at the top */
+.board-card-front {
+  justify-content: flex-start; /* Pushes content to the top */
+  padding: 1rem;
+}
+
+/* The headshot styling for the front of the flip card */
+.board-card-front img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
   border-radius: var(--border-radius);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  margin-bottom: 1rem;
+}
+
+.board-card-front .board-title {
+  margin-bottom: 0.5rem;
+}
+
+/* Modifies the back of the board card for easy reading */
+.board-card-back {
+  background-color: #FFFAEB; /* Keeps the light gold tint */
+  color: var(--text-dark);
   border: 1px solid var(--secondary-color);
 }
 
-/* The Vertical Photo Spaces */
-.photo-placeholder {
-  width: 100%;
-  height: 280px; /* Forces a tall, vertical portrait shape */
-  background-color: #e0e0e0; /* A neutral grey placeholder */
-  border-radius: var(--border-radius);
-  margin-bottom: 1rem;
+.board-card-back p {
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
 }
-/* Forces the real headshots to fit the grid perfectly */
-.board-member img {
-  width: 100%;
-  height: 280px; /* Keeps the vertical portrait shape uniform */
-  object-fit: cover; /* Acts like a perfect crop so the image doesn't stretch or squish */
-  border-radius: var(--border-radius);
-  margin-bottom: 1rem;
-}
-.board-member h3 {
+
+.board-card-back h3 {
   color: var(--primary-color);
-  margin-bottom: 0.25rem;
-  font-size: 1.25rem;
 }
+
 
 .board-title {
   color: var(--text-muted);
