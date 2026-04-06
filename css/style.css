@@ -320,7 +320,21 @@ body {
 /* =========================================
    ABOUT PAGE - BOARD SECTION
    ========================================= */
-
+/* Styles applied to BOTH the front and back */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; 
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden; /* <--- ADD THIS LINE to trap the content */
+}
 .board-section {
   padding: 4rem 5%;
   text-align: center;
@@ -351,19 +365,29 @@ body {
 
 /* Modifies the front of the board card so the photo stays at the top */
 .board-card-front {
-  justify-content: flex-start; /* Pushes content to the top */
-  padding: 1rem;
+  justify-content: flex-start; 
+  padding: 1.25rem; /* Slight padding tweak */
 }
 
-/* The headshot styling for the front of the flip card */
+/* Let the image dynamically shrink instead of breaking the box */
 .board-card-front img {
   width: 100%;
-  height: 240px;
+  flex: 0 1 auto; /* Tells the image it is allowed to shrink if needed! */
+  min-height: 160px; /* Smallest it is allowed to get */
+  max-height: 220px; /* Largest it is allowed to get */
   object-fit: cover;
   border-radius: var(--border-radius);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
+/* Ensure the text has proper spacing */
+.board-card-front h3 {
+  margin-bottom: 0.25rem;
+}
+
+.board-card-front .board-title {
+  margin-bottom: auto; /* Pushes the click-hint perfectly to the bottom */
+}
 .board-card-front .board-title {
   margin-bottom: 0.5rem;
 }
