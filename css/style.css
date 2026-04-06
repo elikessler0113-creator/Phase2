@@ -391,7 +391,24 @@ body {
   text-transform: uppercase;
   font-size: 0.85rem;
 }
+/* 1. Increase the overall height of the board cards */
+.board-flip-card {
+  height: 460px; /* Increased from 400px to give the text room */
+}
 
+/* 2. Force the padding to stay inside the card's boundaries */
+.board-card-front, .board-card-back {
+  box-sizing: border-box; /* This stops the photo from bleeding over the top edge */
+}
+
+/* 3. Slightly shrink the photo to make sure the click hint fits */
+.board-card-front img {
+  width: 100%;
+  height: 210px; /* Decreased from 240px */
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+}
 /* --- MOBILE RESPONSIVENESS --- */
 
 /* On smaller laptops and tablets, snap to a 2x2 grid */
