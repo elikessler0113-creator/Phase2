@@ -611,3 +611,92 @@ body {
     grid-template-columns: 1fr;
   }
 }
+/* =========================================
+   CUSTOM ICON LINKS GRID
+   ========================================= */
+
+.links-section {
+  padding: 4rem 5%;
+}
+
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Divides container into 4 equal columns */
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Base Card Styling */
+.link-card {
+  background-color: #FFFAEB;
+  border: 1px solid var(--secondary-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.link-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+  background-color: #fff6da; /* Slightly darker yellow on hover */
+}
+
+/* THE GRID SPANNING LOGIC:
+   Small links take up 1 column. Large links take up 2.
+   2 + 2 = 4 (They perfectly match the width of the row above them)
+*/
+.small-link {
+  grid-column: span 1;
+  padding: 2rem 1rem;
+  gap: 0.75rem;
+}
+
+.small-link span {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.large-link {
+  grid-column: span 2;
+  padding: 4rem 2rem; /* Much thicker padding to make the box physically taller */
+  gap: 1.25rem;
+}
+
+.large-link span {
+  font-size: 1.25rem; /* Larger text for the larger boxes */
+  font-weight: 700;
+}
+
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 800px) {
+  .links-grid {
+    /* At tablet width, turn it into a 2-column grid */
+    grid-template-columns: repeat(2, 1fr); 
+  }
+  
+  /* The large links still span 2 columns, meaning they take up the whole width */
+  .large-link {
+    grid-column: span 2; 
+    padding: 3rem 1.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .links-grid {
+    /* At mobile width, stack everything into a single column */
+    grid-template-columns: 1fr; 
+  }
+  
+  /* Reset spans so everything takes up 1 full width column */
+  .small-link, .large-link {
+    grid-column: span 1; 
+  }
+}
