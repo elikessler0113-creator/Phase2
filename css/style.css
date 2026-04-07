@@ -611,3 +611,97 @@ body {
     grid-template-columns: 1fr;
   }
 }
+/* =========================================
+   SOCIAL BENTO BOX LAYOUT
+   ========================================= */
+
+.social-bento-section {
+  padding: 4rem 5%;
+  max-width: 1000px; /* Slightly narrower than full width keeps it looking sharp */
+  margin: 0 auto;
+}
+
+/* The Main 2-Column Grid */
+.bento-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 1.5rem;
+  min-height: 500px; /* Ensures the Linktree column has room to stretch */
+}
+
+/* Common styles for all 3 boxes */
+.bento-box {
+  background-color: #FFFAEB; /* Your light yellow tint */
+  border: 1px solid var(--secondary-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Make sure any iframes you paste in take up the full box */
+.bento-box iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* The Right Column Container */
+.bento-right-column {
+  display: grid;
+  grid-template-rows: 1fr 1fr; /* Splits the right side perfectly in half */
+  gap: 1.5rem;
+}
+
+/* Icon Container Styling */
+.bento-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly; /* Spreads the two icons out evenly */
+  padding: 2rem;
+}
+
+.social-icon-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: transform 0.2s ease, color 0.2s ease;
+  gap: 0.5rem;
+}
+
+.social-icon-link span {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Hover effect for the icons */
+.social-icon-link:hover {
+  transform: translateY(-5px);
+  color: var(--secondary-color);
+}
+
+.placeholder-text {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 800px) {
+  .bento-grid {
+    grid-template-columns: 1fr; /* Stacks everything into one column on small screens */
+    min-height: auto;
+  }
+  
+  .bento-linktree {
+    min-height: 400px; /* Gives the linktree a specific height on mobile */
+  }
+  
+  .bento-linkedin {
+    min-height: 250px;
+  }
+}
