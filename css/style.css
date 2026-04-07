@@ -699,8 +699,8 @@ body {
 }
 /* Make the top row logos significantly larger */
 .card-img-small {
-  width: 140px; /* Increased from 40px */
-  height: 140px;
+  width: 200px; /* Increased from 40px */
+  height: 200px;
   object-fit: contain;
   margin-bottom: 0.75rem;
   border-radius: 12px
@@ -708,8 +708,8 @@ body {
 
 /* Make the bottom row logos massively larger */
 .card-img-large {
-  width: 300px; /* Increased from 80px */
-  height: 140px;
+  width: 500px; /* Increased from 80px */
+  height: 200px;
   object-fit: contain;
   margin-bottom: 0.75rem;
   border-radius: 20px
