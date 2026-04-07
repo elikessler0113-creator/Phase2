@@ -316,25 +316,10 @@ body {
   line-height: 1.6;
   color: var(--text-dark);
 }
-
 /* =========================================
-   ABOUT PAGE - BOARD SECTION
+   ABOUT PAGE - BOARD CARDS (V2)
    ========================================= */
-/* Styles applied to BOTH the front and back */
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden; 
-  border-radius: var(--border-radius);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  overflow: hidden; /* <--- ADD THIS LINE to trap the content */
-}
+
 .board-section {
   padding: 4rem 5%;
   text-align: center;
@@ -342,114 +327,110 @@ body {
 
 .board-section h2 {
   color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.board-section > p {
+  color: var(--text-muted);
   margin-bottom: 2rem;
 }
 
-/* The CSS Grid for the 4 Vertical Profiles */
 .board-grid {
   display: grid;
-  /* This creates 4 equal columns */
-  grid-template-columns: repeat(4, 1fr); 
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
-/* =========================================
-   ABOUT PAGE - BOARD FLIP CARDS
-   ========================================= */
 
-/* 1. Make the cards a taller vertical rectangle */
-.board-flip-card {
-  height: 520px; /* Increased from 460px */
-}
-
-/* 1. Go back to even padding on all sides */
-.board-card-front {
-  justify-content: flex-start; 
-  padding: 1.5rem; 
-}
-
-/* 2. Force the spacing and rounding directly on the image */
-.board-card-front img {
-  width: 100%;
-  height: 200px; /* Lock the height so it fits predictably */
-  object-fit: cover;
-  
-  /* THE FIXES: */
-  margin-top: 1rem; /* Pushes the image strictly away from the top edge */
-  border-radius: 12px !important; /* Forces the browser to round the corners, ignoring the 3D bug */
-  margin-bottom: 1rem;
-}
-
-/* Ensure the text has proper spacing */
-.board-card-front h3 {
-  margin-bottom: 0.25rem;
-}
-
-.board-card-front .board-title {
-  margin-bottom: auto; /* Pushes the click-hint perfectly to the bottom */
-}
-.board-card-front .board-title {
-  margin-bottom: 0.5rem;
-}
-
-/* Modifies the back of the board card for easy reading */
-.board-card-back {
-  background-color: #FFFAEB; /* Keeps the light gold tint */
-  color: var(--text-dark);
+/* THE MAIN CARD */
+.board-card {
+  background-color: #FFFAEB; /* Your light yellow tint */
   border: 1px solid var(--secondary-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Acts as the anchor for the sliding overlay */
+  overflow: hidden; /* THE MAGIC SCISSORS - Guarantees rounded corners! */
+  cursor: pointer;
+  height: 420px; /* Locked height */
 }
 
-.board-card-back p {
-  margin-bottom: 0.75rem;
-  font-size: 0.95rem;
+/* THE VISIBLE FRONT */
+.board-photo {
+  width: 100%;
+  height: 260px; /* Fixed height for uniformity */
+  object-fit: cover;
+  margin: 0; 
 }
 
-.board-card-back h3 {
+.board-info {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.board-info h3 {
   color: var(--primary-color);
+  margin-bottom: 0.25rem;
+  margin-top: 0;
 }
-
 
 .board-title {
-  color: var(--text-muted);
+  color: var(--text-dark);
   font-weight: bold;
   text-transform: uppercase;
   font-size: 0.85rem;
-}
-/* 1. Increase the overall height of the board cards */
-.board-flip-card {
-  height: 460px; /* Increased from 400px to give the text room */
+  margin-bottom: auto; /* Pushes the click-hint to the bottom */
 }
 
-/* 2. Force the padding to stay inside the card's boundaries */
-.board-card-front, .board-card-back {
-  box-sizing: border-box; /* This stops the photo from bleeding over the top edge */
-}
-
-/* 3. Slightly shrink the photo to make sure the click hint fits */
-.board-card-front img {
+/* THE HIDDEN OVERLAY (The "Back" of the card) */
+.board-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 210px; /* Decreased from 240px */
-  object-fit: cover;
-  border-radius: var(--border-radius);
-  margin-bottom: 1rem;
+  height: 100%;
+  background-color: #FFFAEB; /* Matches the card background */
+  border: 4px solid var(--primary-color); /* Creates a neat border effect when open */
+  box-sizing: border-box; /* Keeps padding and borders strictly inside the box */
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  /* Pushes the overlay entirely below the bottom edge of the card to hide it */
+  transform: translateY(100%); 
+  transition: transform 0.4s ease-in-out;
 }
+
+.board-overlay h3 {
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.board-overlay p {
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+/* The class added by JS to trigger the slide */
+.board-card.is-active .board-overlay {
+  transform: translateY(0); /* Slides it up into view */
+}
+
 /* --- MOBILE RESPONSIVENESS --- */
-
-/* On smaller laptops and tablets, snap to a 2x2 grid */
 @media (max-width: 900px) {
-  .board-grid {
-    grid-template-columns: repeat(2, 1fr); 
-  }
+  .board-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-
-/* On cell phones, snap to a single vertical column */
 @media (max-width: 600px) {
-  .board-grid {
-    grid-template-columns: 1fr; 
-  }
+  .board-grid { grid-template-columns: 1fr; }
 }
+
 /* =========================================
    ABOUT PAGE - Q&A FLIP CARDS
    ========================================= */
