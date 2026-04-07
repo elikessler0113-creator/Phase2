@@ -409,6 +409,7 @@ body {
 .board-overlay h3 {
   color: var(--primary-color);
   margin: 0;
+  font-size: 1.75rem;
 }
 
 .board-overlay p {
