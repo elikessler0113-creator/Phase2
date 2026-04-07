@@ -712,3 +712,54 @@ body {
   object-fit: contain;
   margin-bottom: 0.75rem;
 }
+/* =========================================
+   GOOGLE FORM EMBED
+   ========================================= */
+
+.google-form-section {
+  padding: 4rem 5%;
+  display: flex;
+  justify-content: center;
+}
+
+/* The Box Holding the Form and Headers */
+.form-wrapper {
+  background-color: #FFFAEB; /* Matches your light yellow theme */
+  border: 1px solid var(--secondary-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  padding: 3rem 2rem;
+  max-width: 750px; /* Gives the form plenty of room to breathe */
+  width: 100%;
+  text-align: center;
+}
+
+/* Header Styling */
+.form-wrapper h2 {
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+}
+
+/* Subtle Note Styling */
+.form-wrapper small {
+  display: block; /* Forces it onto its own line */
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 2rem; /* Creates a nice gap before the form starts */
+}
+
+/* The Iframe Itself */
+.form-wrapper iframe {
+  width: 100%; /* Forces the form to fill the width of the box */
+  min-height: 800px; /* Prevents the dreaded "double scrollbar" inside the form */
+  border: none;
+  border-radius: 8px; /* Slightly rounds the corners of the white Google form */
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 600px) {
+  .form-wrapper {
+    padding: 2rem 1rem; /* Reduces padding so the form fits better on small screens */
+  }
+}
