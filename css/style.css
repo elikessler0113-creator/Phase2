@@ -697,21 +697,6 @@ body {
     grid-column: span 1; 
   }
 }
-/* Sizing for the top row images */
-.card-img-small {
-  width: 40px;
-  height: 40px;
-  object-fit: contain; /* Ensures the whole logo is visible without cropping */
-  margin-bottom: 0.5rem;
-}
-
-/* Sizing for the bottom row images */
-.card-img-large {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  margin-bottom: 0.5rem;
-}
 /* Make the top row logos significantly larger */
 .card-img-small {
   width: 70px; /* Increased from 40px */
