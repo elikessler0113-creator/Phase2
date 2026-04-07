@@ -703,6 +703,7 @@ body {
   height: 140px;
   object-fit: contain;
   margin-bottom: 0.75rem;
+  border-radius: 12px
 }
 
 /* Make the bottom row logos massively larger */
@@ -711,6 +712,7 @@ body {
   height: 140px;
   object-fit: contain;
   margin-bottom: 0.75rem;
+  border-radius: 20px
 }
 /* =========================================
    GOOGLE FORM EMBED
