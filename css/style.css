@@ -765,3 +765,105 @@ body {
     padding: 2rem 1rem; /* Reduces padding so the form fits better on small screens */
   }
 }
+/* =========================================
+   IMAGE GALLERY (PHOTOWHEEL)
+   ========================================= */
+
+.gallery-section {
+  padding: 4rem 5%;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.gallery-section h2 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.gallery-section p {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+/* The Box Holding Everything */
+.gallery-wrapper {
+  position: relative;
+  background-color: #FFFAEB; /* Matches your theme */
+  border: 1px solid var(--secondary-color);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The Container for the Photos */
+.gallery-track {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px; /* Smooth corners for the images */
+  background-color: #000; /* Deep background while images load/fade */
+  aspect-ratio: 16 / 9; /* Strictly locks it to a standard landscape box */
+}
+
+/* The Photos Themselves */
+.gallery-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures images fill the landscape box perfectly */
+  opacity: 0; /* Hides all images by default */
+  transition: opacity 0.4s ease-in-out; /* Smooth crossfade effect */
+  pointer-events: none;
+}
+
+/* The Class that Makes an Image Visible */
+.gallery-img.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* The Navigation Arrows */
+.gallery-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.gallery-btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.prev-btn { left: -20px; } /* Pulls the button slightly out of the box */
+.next-btn { right: -20px; }
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 600px) {
+  .gallery-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  .prev-btn { left: -10px; }
+  .next-btn { right: -10px; }
+}
