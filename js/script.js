@@ -139,3 +139,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+      const boardCards = document.querySelectorAll('.board-card');
+      boardCards.forEach(card => {
+        card.addEventListener('click', () => {
+          // Removes the active state from all other cards if you click a new one
+          boardCards.forEach(c => { if(c !== card) c.classList.remove('is-active'); });
+          // Toggles the clicked card
+          card.classList.toggle('is-active');
+        });
+      });
