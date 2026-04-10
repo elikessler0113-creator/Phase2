@@ -1,6 +1,5 @@
 
 // PHOTOWHEEL//
-<script>
   // 1. YOUR MASTER LIST OF PHOTOS
   // Whenever you add a new photo to your folder, just add its name here!
   const photoFiles = [
@@ -56,4 +55,3 @@
     let newIndex = (currentImgIndex - 1 + galleryImages.length) % galleryImages.length;
     switchImage(newIndex);
   });
-</script>
