@@ -14,19 +14,24 @@
  <body>
     <header class="main-header">
       <div class="header-logo">
-        <a href="/"> <!-- The forward slash removes the "/index" from the homepage, giving it an overall cleaner look. -->
-          <img src="assets/images/Logo.jpeg" alt="MISBA Club Logo"> <!-- This is the logo in the header-->
-        </a>
+        <a href="/"> <img src="assets/images/Logo.jpeg" alt="MISBA Club Logo"> </a>
       </div>
-  
-      <nav class="main-nav"> <!-- These are the header links to other pages-->
+
+      <button class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <nav class="main-nav" id="nav-links"> 
         <a href="/">Home</a>
         <a href="about">About Us</a>
         <a href="activities">Activities</a>
         <a href="contact" class="nav-btn">Join / Contact</a>
       </nav>
   </header>
-
   <main>
         <section class="about-intro">
       <h2>Our Events</h2>
