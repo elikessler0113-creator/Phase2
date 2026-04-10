@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
       '3.png'
     ];
 
-    const folderPath = 'assets/images/photowheel/';
+    const folderPath = '/assets/images/photowheel/';
     const galleryImages = []; 
 
     photoFiles.forEach((filename, index) => {
