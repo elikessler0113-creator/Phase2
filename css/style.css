@@ -748,23 +748,34 @@ body {
   .small-link, .large-link {
     grid-column: span 1; 
   }
+
+  /* Shrink the heights a bit on mobile so they don't take up the whole screen */
+  .card-img-small {
+    height: 150px !important; 
+  }
+  .card-img-large {
+    height: 100px !important; 
+  }
 }
+
 /* Make the top row logos significantly larger */
 .card-img-small {
-  width: 200px; /* Increased from 40px */
+  width: 200px; 
+  max-width: 100%; /* CRITICAL FIX: Shrinks to fit narrow screens */
   height: 200px;
   object-fit: contain;
   margin-bottom: 0.75rem;
-  border-radius: 12px
+  border-radius: 12px;
 }
 
 /* Make the bottom row logos massively larger */
 .card-img-large {
-  width: 500px; /* Increased from 80px */
+  width: 500px; 
+  max-width: 100%; /* CRITICAL FIX: Shrinks to fit narrow screens */
   height: 200px;
   object-fit: contain;
   margin-bottom: 0.75rem;
-  border-radius: 20px
+  border-radius: 20px;
 }
 /* =========================================
    GOOGLE FORM EMBED
