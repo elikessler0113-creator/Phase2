@@ -96,6 +96,58 @@ body {
   color: var(--text-dark);
 }
 
+/* --- ADDED: The Hamburger Button (Desktop) --- */
+.menu-toggle {
+  display: none; /* Hidden on big computer screens */
+  background: none;
+  border: none;
+  color: var(--primary-color); /* Uses your maroon color for the icon */
+  cursor: pointer;
+  padding: 0;
+}
+
+/* --- ADDED: MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+  
+  /* Show the hamburger button */
+  .menu-toggle {
+    display: block; 
+  }
+
+  /* Transform the horizontal links into a vertical dropdown */
+  .main-nav {
+    display: none; /* Hidden by default until the button is clicked */
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Pushes the menu exactly below the sticky header */
+    left: 0;
+    width: 100%;
+    background-color: #FFFAEB; /* Matches your header background perfectly */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+    padding: 1rem 0;
+    gap: 0; /* Removes the 2rem gap so links stack cleanly */
+  }
+
+  /* The magic class the JavaScript uses to show the menu */
+  .main-nav.active {
+    display: flex; 
+  }
+
+  /* Space out the links so they are easy to tap with a thumb */
+  .main-nav a {
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box; 
+  }
+
+  /* Keep the 'Join' button looking like a button, not stretched across the screen */
+  .main-nav .nav-btn {
+    width: max-content;
+    margin: 0.5rem auto; 
+  }
+}
+
 
 /* =========================================
    FOOTER STYLES
