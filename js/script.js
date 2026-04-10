@@ -7,24 +7,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const navLinks = document.getElementById('nav-links');
 
-  // Only run if the button actually exists on the page
   if (mobileMenuBtn && navLinks) {
     mobileMenuBtn.addEventListener('click', () => {
-      // Toggles the dropdown menu open and closed
       navLinks.classList.toggle('active');
     });
   }
-
 
   // =========================================
   // 2. IMAGE GALLERY (PHOTOWHEEL)
   // =========================================
   const track = document.getElementById('galleryTrack');
 
-  // Only run this if the gallery actually exists on the current page
   if (track) {
-    
-    // YOUR MASTER LIST OF PHOTOS
     const photoFiles = [
       '1.png', 
       '2.png', 
@@ -34,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const folderPath = 'assets/images/photowheel/';
     const galleryImages = []; 
 
-    // Build the images
     photoFiles.forEach((filename, index) => {
       const imgElement = document.createElement('img');
       imgElement.src = folderPath + filename;
@@ -49,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
       galleryImages.push(imgElement);
     });
 
-    // Button Logic
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
     let currentImgIndex = 0;
@@ -73,8 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-});
-// =========================================
+  // =========================================
   // 3. ABOUT PAGE INTERACTIVE CARDS
   // =========================================
   
@@ -82,9 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const boardCards = document.querySelectorAll('.board-card');
   boardCards.forEach(card => {
     card.addEventListener('click', () => {
-      // Removes the active state from all other cards if you click a new one
       boardCards.forEach(c => { if(c !== card) c.classList.remove('is-active'); });
-      // Toggles the clicked card
       card.classList.toggle('is-active');
     });
   });
@@ -96,3 +85,5 @@ document.addEventListener('DOMContentLoaded', () => {
       card.classList.toggle('is-flipped');
     });
   });
+
+}); // <-- THIS CLOSES THE ENTIRE SCRIPT SAFELY AT THE END!
