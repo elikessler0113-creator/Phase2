@@ -115,17 +115,7 @@
         </div>
         </section>
 
-    <script>
-      const boardCards = document.querySelectorAll('.board-card');
-      boardCards.forEach(card => {
-        card.addEventListener('click', () => {
-          // Removes the active state from all other cards if you click a new one
-          boardCards.forEach(c => { if(c !== card) c.classList.remove('is-active'); });
-          // Toggles the clicked card
-          card.classList.toggle('is-active');
-        });
-      });
-    </script>
+    <script src="script.js"> </script>
 <section class="qa-section">
       <h2>Frequently Asked Questions</h2>
       <p>Click on each card to reveal the answer!</p>
