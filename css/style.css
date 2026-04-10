@@ -859,7 +859,7 @@ body {
   overflow: hidden;
   border-radius: 8px; /* Smooth corners for the images */
   background-color: #000; /* Deep background while images load/fade */
-  aspect-ratio: 16 / 9; /* Strictly locks it to a standard landscape box */
+  aspect-ratio: 4 / 3; /* Strictly locks it to a standard landscape box */
 }
 
 /* The Photos Themselves */
@@ -869,7 +869,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures images fill the landscape box perfectly */
+  object-fit: contain;
   opacity: 0; /* Hides all images by default */
   transition: opacity 0.4s ease-in-out; /* Smooth crossfade effect */
   pointer-events: none;
