@@ -55,3 +55,87 @@
     let newIndex = (currentImgIndex - 1 + galleryImages.length) % galleryImages.length;
     switchImage(newIndex);
   });
+// =========================================
+// PLUG-AND-PLAY MOBILE NAVIGATION
+// =========================================
+
+// Wait for the HTML to finish loading before running
+document.addEventListener('DOMContentLoaded', () => {
+  
+  // 1. Find the existing navigation and the list of links
+  const nav = document.querySelector('nav');
+  const navList = document.querySelector('nav ul');
+
+  if (nav && navList) {
+    
+    // 2. Inject the necessary CSS rules dynamically into the <head>
+    const style = document.createElement('style');
+    style.innerHTML = `
+      /* Hide hamburger by default on desktop */
+      .injected-hamburger { 
+        display: none; 
+        background: none; 
+        border: none; 
+        color: var(--primary-color, #333); 
+        cursor: pointer; 
+        padding: 0;
+      }
+      
+      /* Mobile rules */
+      @media (max-width: 768px) {
+        .injected-hamburger { 
+          display: block; 
+        }
+        nav {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          position: relative;
+        }
+        nav ul { 
+          display: none; 
+          flex-direction: column; 
+          position: absolute; 
+          top: 100%; 
+          left: 0; 
+          width: 100%; 
+          background-color: #FFFAEB; 
+          border-bottom: 1px solid var(--secondary-color, #ccc);
+          padding: 1rem 0; 
+          box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+          z-index: 999;
+          margin: 0;
+        }
+        /* The class we toggle to show the menu */
+        nav ul.mobile-active { 
+          display: flex; 
+        }
+        nav ul li { 
+          text-align: center; 
+          padding: 1rem 0; 
+        }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // 3. Create the Hamburger Button and its SVG icon
+    const hamburgerBtn = document.createElement('button');
+    hamburgerBtn.className = 'injected-hamburger';
+    hamburgerBtn.setAttribute('aria-label', 'Toggle navigation');
+    hamburgerBtn.innerHTML = `
+      <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    `;
+
+    // 4. Insert the button into the navigation bar
+    nav.insertBefore(hamburgerBtn, navList);
+
+    // 5. Add the click logic to open/close the menu
+    hamburgerBtn.addEventListener('click', () => {
+      navList.classList.toggle('mobile-active');
+    });
+  }
+});
