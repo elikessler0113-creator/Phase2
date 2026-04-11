@@ -766,15 +766,12 @@ body {
   object-fit: contain;
   margin-bottom: 0.75rem;
   
-  /* THE NUCLEAR OPTION FOR MOBILE BROWSER CORNERS */
-  border-radius: 12px;
-  -webkit-border-radius: 12px;
-  overflow: hidden;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  -webkit-mask-image: -webkit-radial-gradient(white, black); /* The ultimate Safari override */
+  /* Fallback for normal browsers */
+  border-radius: 12px; 
+  
+  /* THE COOKIE-CUTTER (Forces the corners to cut on mobile) */
+  -webkit-clip-path: inset(0px round 12px);
+  clip-path: inset(0px round 12px);
 }
 
 /* Make the bottom row logos massively larger */
@@ -785,15 +782,12 @@ body {
   object-fit: contain;
   margin-bottom: 0.75rem;
 
-  /* THE NUCLEAR OPTION FOR MOBILE BROWSER CORNERS */
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  overflow: hidden;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  -webkit-mask-image: -webkit-radial-gradient(white, black); /* The ultimate Safari override */
+  /* Fallback for normal browsers */
+  border-radius: 20px; 
+  
+  /* THE COOKIE-CUTTER (Forces the corners to cut on mobile) */
+  -webkit-clip-path: inset(0px round 20px);
+  clip-path: inset(0px round 20px);
 }
 /* =========================================
    GOOGLE FORM EMBED
