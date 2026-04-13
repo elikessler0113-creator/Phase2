@@ -17,52 +17,35 @@ The repository is organized to be as straightforward as possible:
 
 ```text
 / (Root)
-│── index.html        # The Homepage
-│── about.html        # Meet the Board & FAQ
-│── activities.html   # Past events and Photowheel gallery
-│── contact.html      # Social links and Google Form embed
-│── robots.txt        # Blocks web scrapers and crawlers
+│── index.html         # The Homepage
+│── about.html         # Meet the Board & FAQ
+│── activities.html    # Past events and Photowheel gallery
+│── contact.html       # Social links and Google Form embed
+│── robots.txt         # Blocks web scrapers and crawlers
 │
 ├── css/
-│   └── style.css     # The master stylesheet for all pages
+│   └── style.css      # The master stylesheet for all pages
 │
 ├── js/
-│   └── script.js     # Handles the mobile menu, gallery, and interactive cards
+│   └── script.js      # Handles the mobile menu, gallery, and interactive cards
 │
 └── assets/
-    └── images/       # All site photography, board headshots, and logos
+|   └── images/        # All site photography, board headshots, and logos
+|        └──logos/     # Logos for links on contact
+|       └──events/     # Photos for event cards on activities
+|       └──photowheel/ # Photos on the homepage within the photowheel
+|        └──board/     # Board member headshots
+│
+└── BackupHTML/        # Backup code files
+
+
 ```
 # Maintenance Guide for Future Board Members
 If you are a new officer taking over this site, welcome! The code has been heavily annotated with "Developer Comments" to help you find your way around.
 
-1. Updating the Photowheel (Image Gallery)
-To add new photos to the homepage and activities gallery:
+The contact form will need to me updated immediately, as the current form and link to the form is a form that I (Eli, whi is not affiliated with the club), created, and is linked to my email.
 
-Upload your new images to the assets/images/photowheel/ folder.
-
-Open js/script.js.
-
-Locate the photoFiles list at the top of the gallery section and type your new file names into the list.
-
-2. Updating the Contact Form
-If the club creates a new Google Form for memberships or inquiries:
-
-Open contact.html.
-
-Scroll to the ``.
-
-Follow the numbered instructions in the HTML comments to swap out the <iframe> link.
-
-3. Updating the Executive Board
-To change out the Meet the Board cards:
-
-Upload new headshots to the assets/images/board/ folder.
-
-Open about.html and scroll to the ``.
-
-Replace the text and image paths inside each <div class="board-card">.
-
-BACKUP FILES - If anything goes catastrphically wrong, there are backups for all files, which contain exact copies of the files as they are as of April 2026. If needed, change the name of the main folder, and move the backup out of the BackupCode folder.
+BACKUP FILES - If anything goes catastrphically wrong, there are backups for all files, which contain exact copies of the files as they are as of April 2026. If needed, change the name of the main folder, and move the backup out of the BackupHTML and into the main repository folder. Additionally, you can copy and paste the code from the backup directly into the active page.
 
 Hosting
 This site is currently deployed using GitHub Pages. Any changes pushed to the main branch will automatically reflect on the live website within a few minutes.
