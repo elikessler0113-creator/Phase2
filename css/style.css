@@ -3,7 +3,7 @@
    ========================================================================== 
    
    TABLE OF CONTENTS:
-   01. GLOBAL VARIABLES & RESET (Colors, fonts, spacing)
+   01. GLOBAL VARIABLES & BASE STYLES (Colors, fonts, accessibility)
    02. BASE LAYOUT & FOOTER ANCHORING
    03. HEADER & NAVIGATION (Includes Mobile Menu)
    04. FOOTER STYLES
@@ -15,7 +15,7 @@
 
 
 /* ==========================================================================
-   01. GLOBAL VARIABLES & RESET
+   01. GLOBAL VARIABLES & BASE STYLES
    ========================================================================== */
 
 :root {
@@ -39,6 +39,27 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* Smooth Scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Accessibility: Custom focus rings for keyboard navigation */
+a:focus-visible, 
+button:focus-visible, 
+input:focus-visible, 
+textarea:focus-visible {
+  outline: 3px solid var(--secondary-color);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Image Fail-safes: Shows a clean background if an image breaks */
+img {
+  background-color: var(--bg-light); 
+  -webkit-user-drag: none; /* Prevents accidental desktop dragging */
 }
 
 
@@ -82,6 +103,7 @@ body {
 .header-logo img {
   height: 60px;
   width: auto;
+  background-color: transparent; /* Overrides the image fallback for the logo */
 }
 
 /* --- DESKTOP NAVIGATION --- */
@@ -140,7 +162,8 @@ body {
     left: 0;
     width: 100%;
     background-color: #FFFAEB; 
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+    /* Floating shadow effect for the mobile menu */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     padding: 1rem 0;
     gap: 0; 
   }
@@ -288,12 +311,13 @@ body {
   border: 1px solid var(--secondary-color); 
   max-width: 400px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .summary-card:hover {
   transform: translateY(-8px); 
   box-shadow: 0 15px 30px rgba(0,0,0,0.15); 
+  border-color: var(--primary-color); /* Changes to Maroon on hover */
 }
 
 .summary-card h3 {
@@ -772,8 +796,10 @@ body {
   object-fit: contain;
   margin-bottom: 0.75rem;
   border-radius: 12px; 
-  -webkit-clip-path: inset(0px round 12px); /* Mobile Safari override */
+  /* Mobile Safari override */
+  -webkit-clip-path: inset(0px round 12px); 
   clip-path: inset(0px round 12px);
+  background-color: transparent;
 }
 
 .card-img-large {
@@ -783,8 +809,10 @@ body {
   object-fit: contain;
   margin-bottom: 0.75rem;
   border-radius: 20px; 
-  -webkit-clip-path: inset(0px round 20px); /* Mobile Safari override */
+  /* Mobile Safari override */
+  -webkit-clip-path: inset(0px round 20px); 
   clip-path: inset(0px round 20px);
+  background-color: transparent;
 }
 
 @media (max-width: 800px) {
