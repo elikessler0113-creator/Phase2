@@ -1,100 +1,101 @@
-<DOCTYPE html>
-<html>
-  <!-- This is the favicon and the site title (in the tab on your browser).-->
-  <head> 
+<!DOCTYPE html>
+<html lang="en">
+<head> 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MISBA Club | UMD</title> <!-- This is what shows in the tab for a title-->
-  
-  
-  
-  <link rel="stylesheet" href="css/style.css">
+  <!-- Nothing above this line should need to be changed with the current layout.-->
+  <title>MISBA Club | UMD</title> <!-- This is the site title that shows in your browser tab. Please update if desired. It is currently the same on all pages. -->
+  <link rel="stylesheet" href="css/style.css"><!-- IMPORTANT! DO NOT DELETE! This contans all of the page's visual elements. If this is deleted, the page will look gross and will most likely break.-->
 </head>
-<!-- Below this is the header-->
- <body>
-   <header class="main-header">
-      <div class="header-logo">
-        <a href="/"> <img src="assets/images/Logo.jpeg" alt="MISBA Club Logo"> </a>
-      </div>
 
-      <button class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle navigation">
-        <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-      </button>
+<body>
+  <header class="main-header"> <!-- Everything within this section will appear in the header at the top of the page. It will be the same across all pages. If you choose to update it, make sure you update all other pages accordingly. That can be done by copy and pasting the new code in place of the old one. -->
+    <div class="header-logo">
+      <a href="/"> <!-- This links the header logo to the homepage-->
+        <img src="assets/images/Logo.jpeg" alt="MISBA Club Logo"> <!--The header logo. This can be changed just be sure that the file name and path is correct.-->
+      </a>
+    </div>
 
-      <nav class="main-nav" id="nav-links"> 
-        <a href="/">Home</a>
-        <a href="about">About Us</a>
-        <a href="activities">Activities</a>
-        <a href="contact" class="nav-btn">Join / Contact</a>
-      </nav>
+    <button class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle navigation"> <!-- This is the hamburger menu that only appears on mobile-->
+      <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    <nav class="main-nav" id="nav-links"> <!-- The links that show on a computer -->
+      <a href="/">Home</a> <!-- the "/" links it to the homepage without showing "/index",which gives the site a cleaner look overall-->
+      <a href="about">About Us</a> 
+      <a href="activities">Activities</a>
+      <a href="contact" class="nav-btn">Join / Contact</a>
+    </nav>
   </header>
-  <main>
-<section class="google-form-section">
+
+  <main class="page-content">
+
+    <section class="google-form-section"> <!-- This is the section that contains the contact form. Please update it, as there is currently a placeholder that I (Eli) created, and is not connected to the club email or anything related to it. -->
       <div class="form-wrapper">
         
         <h2>Get in Touch</h2>
-        <small>If the form doesn't work, <a href="https://forms.gle/EiWv7vtTbY3HTQ7u6" target="_blank">click here</a>.</small>
         
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfyqAv2FsT2pBQdvALZzb1AUtIp923psyq5u_3nw5k15WRXyw/viewform?embedded=true" width="640" height="1180" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>        
+        <small>If the form doesn't work, <a href="https://forms.gle/EiWv7vtTbY3HTQ7u6" target="_blank">click here</a>.</small> <!-- Update this link with the actual MISBAC contacct form!-->
+        
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfyqAv2FsT2pBQdvALZzb1AUtIp923psyq5u_3nw5k15WRXyw/viewform?embedded=true" width="640" height="1180" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>  <!-- Replace this with an embed code for the actual MISBAC contact form!-->   
+      
       </div>
     </section>
 
-    <section class="links-section">
+    <section class="links-section"> <!-- This is the section that contains all of the group links and icons. If you choose to update them, make sure to put photos in the correct folder (assets/images/logos). The first four should be square, and the last two are rectangles.-->
       <div class="links-grid">
-        
-        <a href="https://www.linkedin.com/in/mis-ba-duluth/" target="_blank" class="link-card small-link">
-          <img src="assets/images/logos/linkedin.png" alt="Linkedin Logo" class="card-img-small">
-          <span>Our Linkedin Page</span>
+        <!-- These are the small cards.-->
+        <a href="https://www.linkedin.com/in/mis-ba-duluth/" target="_blank" class="link-card small-link"> <!-- Link. If updated, make sure to change the link and description. -->
+          <img src="assets/images/logos/linkedin.png" alt="Linkedin Logo" class="card-img-small"> <!-- Photo. The photo here should be a square.-->
+          <span>Our Linkedin Page</span> <!-- Text that appears under logo-->
         </a>
 
-        <a href="https://duluthumn.campusgroups.com/MISBA/club_signup" target="_blank" class="link-card small-link">
-          <img src="assets/images/logos/campusgroups.png" alt="CampusGroups Logo" class="card-img-small">
-          <span>Our CampusGroups page</span>
+        <a href="https://duluthumn.campusgroups.com/MISBA/club_signup" target="_blank" class="link-card small-link"> <!-- Link. If updated, make sure to change the link and description. -->
+          <img src="assets/images/logos/campusgroups.png" alt="CampusGroups Logo" class="card-img-small"> <!-- Photo. The photo here should be a square.-->
+          <span>Our CampusGroups page</span> <!-- Text that appears under logo-->
         </a>
 
-        <a href="https://www.instagram.com/misbac_umd/" target="_blank" class="link-card small-link">
-          <img src="assets/images/logos/instagram.png" alt="Instagram Logo" class="card-img-small">
-          <span>Our Instagram page</span>
+        <a href="https://www.instagram.com/misbac_umd/" target="_blank" class="link-card small-link"> <!-- Link. If updated, make sure to change the link and description. -->
+          <img src="assets/images/logos/instagram.png" alt="Instagram Logo" class="card-img-small"> <!-- Photo. The photo here should be a square.-->
+          <span>Our Instagram page</span> <!-- Text that appears under logo-->
         </a>
 
-        <a href="https://groupme.com/join_group/102864632/jWQbuBT5" class="link-card small-link">
-          <img src="assets/images/logos/groupme.png" alt="Groupme Icon" class="card-img-small">
-          <span>Our GroupMe Groupchat</span>
+        <a href="https://groupme.com/join_group/102864632/jWQbuBT5" class="link-card small-link"> <!-- Link. If updated, make sure to change the link and description. -->
+          <img src="assets/images/logos/groupme.png" alt="Groupme Icon" class="card-img-small"> <!-- Photo. The photo here should be a square.-->
+          <span>Our GroupMe Groupchat</span> <!-- Text that appears under logo-->
+        </a>
+        <!-- These are the large cards. -->
+        <a href="https://d.umn.edu" target="_blank" class="link-card large-link"> <!-- Link. If updated, make sure to change the link and description. -->
+          <img src="assets/images/logos/duluth.png" alt="UMD Logo" class="card-img-large"> <!-- Photo. The photo here should be a rectangle.-->
+          <span>University of Minnesota Duluth Website</span> <!-- Text that appears under logo-->
         </a>
 
-        <a href="https://d.umn.edu" target="_blank" class="link-card large-link">
-          <img src="assets/images/logos/duluth.png" alt="UMD Logo" class="card-img-large">
-          <span>University of Minnesota Duluth Website</span>
+        <a href="https://lsbe.d.umn.edu" target="_blank" class="link-card large-link"> <!-- Link. If updated, make sure to change the link and description. -->
+          <img src="assets/images/logos/lsbe.png" alt="LSBE" class="card-img-large"> <!-- Photo. The photo here should be a rectangle.-->
+          <span>LSBE Department Page</span> <!-- Text that appears under logo-->
         </a>
 
-        <a href="https://lsbe.d.umn.edu" target="_blank" class="link-card large-link">
-          <img src="assets/images/logos/lsbe.png" alt="LSBE" class="card-img-large">
-          <span>LSBE Department Page</span>
-        </a>
-
-      </div>
-    </section>
+      </div> </section>
     
-  </main>
-
-<!-- This is your footer.-->
-    <footer class="main-footer">
-      <div class="footer-content">
-        <p>&copy; 2026 Management Information Systems & Business Analytics Club - UMD</p>
-        
-        <div class="footer-links">
-          <a href="mailto:DuluthMISBA@gmail.com">DuluthMISBA@gmail.com</a>
-          <span>|</span>
-          <a href="https://www.linkedin.com/in/mis-ba-duluth/" target="_blank">LinkedIn</a>
-          <span>|</span>
-          <a href="https://www.instagram.com/misbac_umd" target="_blank">Instagram</a>
-        </div>
+  </main>  
+  <footer class="main-footer"> <!-- Everything within this section will appear in the footer at the bottom of the page. It will be the same across all sites. If you choose to update it, make sure you update all other pages accordingly. That can be done by copy and pasting the new code in place of the old one. -->
+    <div class="footer-content">
+      <p>&copy; 2026 Management Information Systems & Business Analytics Club - UMD</p> <!-- Copyrighgt statement -->
+      
+      <div class="footer-links">
+        <a href="mailto:DuluthMISBA@gmail.com">DuluthMISBA@gmail.com</a> <!-- Launches the user's email application to send an email -->
+        <span>|</span>
+        <a href="https://www.linkedin.com/in/mis-ba-duluth/" target="_blank">LinkedIn</a> <!-- The MISBAC Linkedin -->
+        <span>|</span>
+        <a href="https://www.instagram.com/misbac_umd" target="_blank">Instagram</a> <!-- The MISBAC Instagram-->
       </div>
-    </footer>
-   <script src="js/script.js"></script>
- </body>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script> <!-- THIS IS IMPORTANT, DO NOT DELETE IT! This is what tells the page to reference script.js forkey functions. If you delete this, it will damage overall site functionality. -->
+</body>
 </html>
