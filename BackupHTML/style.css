@@ -1,83 +1,125 @@
-/* --- GLOBAL VARIABLES --- */
+/* ==========================================================================
+   MISBA CLUB UMD - MASTER STYLESHEET
+   ========================================================================== 
+   
+   TABLE OF CONTENTS:
+   01. GLOBAL VARIABLES & BASE STYLES (Colors, fonts, accessibility)   Lines 17-65
+   02. BASE LAYOUT & FOOTER ANCHORING                                  Lines 66-84
+   03. HEADER & NAVIGATION (Includes Mobile Menu)                      Lines 85-188
+   04. FOOTER STYLES                                                   Lines 189-232
+   05. PAGE: HOME (Hero, Quick Summary, Live Embed)                    Lines 233-372
+   06. PAGE: ABOUT US (Intro, Board Cards, FAQ Flip Cards)             Lines 373-589
+   07. PAGE: ACTIVITIES (General Info Cards, Image Gallery/Photowheel) Lines 590-735
+   08. PAGE: JOIN / CONTACT (Icon Links Grid, Google Form Embed)       Lines 736-875
+   ========================================================================== */
+
+
+/* ==========================================================================
+   01. GLOBAL VARIABLES & BASE STYLES
+   ========================================================================== */
+
 :root {
-  /* You can swap these hex codes for your custom palette or stick to UMD Maroon and Gold */
-  --primary-color: #7A0019; /* UMD Maroon */
+  /* MAIN BRAND COLORS */
+  --primary-color: #7A0019;   /* UMD Maroon */
   --secondary-color: #FFCC33; /* UMD Gold */
   
-  /* Neutral colors for backgrounds and text */
+  /* NEUTRAL BACKGROUND & TEXT COLORS */
   --bg-light: #F8F9FA;
   --bg-white: #FFFFFF;
   --text-dark: #333333;
   --text-muted: #666666;
 
-  /* Standardizing spacing and borders */
+  /* TYPOGRAPHY & SHAPES */
   --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --border-radius: 8px;
+  --border-radius: 8px; /* Change this to make all boxes more or less rounded */
 }
-/* --- UNIVERSAL RESET --- */
+
+/* Universal Reset: Strips default browser margins so the layout is consistent */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Smooth Scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Accessibility: Custom focus rings for keyboard navigation */
+a:focus-visible, 
+button:focus-visible, 
+input:focus-visible, 
+textarea:focus-visible {
+  outline: 3px solid var(--secondary-color);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Image Fail-safes: Shows a clean background if an image breaks */
+img {
+  background-color: var(--bg-light); 
+  -webkit-user-drag: none; /* Prevents accidental desktop dragging */
+}
+
+
+/* ==========================================================================
+   02. BASE LAYOUT & FOOTER ANCHORING
+   ========================================================================== */
+
 body {
-  /* Tells the footer what to anchor itself to */
+  /* Tells the absolute-positioned footer what to anchor itself to */
   position: relative; 
   min-height: 100vh; 
   
-  /* Creates a safe zone at the bottom so text doesn't hide behind the footer */
+  /* Creates a safe zone at the bottom so page text doesn't hide behind the footer */
   padding-bottom: 150px; 
 }
 
-/* We no longer need flex properties here, just padding! */
+/* Wrapper for the main content on every page */
 .page-content {
   padding-bottom: 3rem; 
 }
-/* =========================================
-   HEADER & NAVIGATION STYLES
-   ========================================= */
+
+
+/* ==========================================================================
+   03. HEADER & NAVIGATION
+   ========================================================================== */
 
 .main-header {
-  /* Flexbox makes the logo and the nav links sit side-by-side */
   display: flex;
-  justify-content: space-between; /* Pushes logo left, nav right */
-  align-items: center; /* Vertically centers them */
-  
-  /* Adds space inside the header */
+  justify-content: space-between; /* Logo left, Nav right */
+  align-items: center; 
   padding: 1rem 5%; 
-  
-  background-color: #FFFAEB;
-  
-  /* Adds a subtle shadow to separate the header from the page content */
+  background-color: #FFFAEB; /* Light yellow background */
   box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
   
-  /* Makes the header stick to the top when scrolling */
+  /* Sticky Header Mechanics */
   position: sticky;
   top: 0;
   z-index: 1000; 
 }
 
-/* Sizing the logo image so it doesn't take over the screen */
 .header-logo img {
   height: 60px;
   width: auto;
+  background-color: transparent; /* Overrides the image fallback for the logo */
 }
 
+/* --- DESKTOP NAVIGATION --- */
 .main-nav {
   display: flex;
-  gap: 2rem; /* Creates even spacing between each link */
+  gap: 2rem; 
   align-items: center;
 }
 
-/* Styling the standard navigation links */
 .main-nav a {
-  text-decoration: none; /* Removes the default blue underline */
+  text-decoration: none; 
   color: var(--text-dark);
   font-weight: 600;
-  transition: color 0.3s ease; /* Makes the hover effect smooth */
+  transition: color 0.3s ease; 
 }
 
-/* Changes text to UMD Maroon when someone hovers over a link */
 .main-nav a:hover {
   color: var(--primary-color);
 }
@@ -92,48 +134,44 @@ body {
 }
 
 .main-nav .nav-btn:hover {
-  background-color: var(--secondary-color); /* Turns UMD Gold on hover */
+  background-color: var(--secondary-color); 
   color: var(--text-dark);
 }
 
-/* --- ADDED: The Hamburger Button (Desktop) --- */
+/* --- MOBILE NAVIGATION --- */
 .menu-toggle {
-  display: none; /* Hidden on big computer screens */
+  display: none; /* Hidden on desktop screens */
   background: none;
   border: none;
-  color: var(--primary-color); /* Uses your maroon color for the icon */
+  color: var(--primary-color); 
   cursor: pointer;
   padding: 0;
 }
 
-/* --- ADDED: MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
-  
-  /* Show the hamburger button */
   .menu-toggle {
-    display: block; 
+    display: block; /* Show hamburger button on phones */
   }
 
   /* Transform the horizontal links into a vertical dropdown */
   .main-nav {
-    display: none; /* Hidden by default until the button is clicked */
+    display: none; /* Hidden until toggled via JavaScript */
     flex-direction: column;
     position: absolute;
-    top: 100%; /* Pushes the menu exactly below the sticky header */
+    top: 100%; 
     left: 0;
     width: 100%;
-    background-color: #FFFAEB; /* Matches your header background perfectly */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+    background-color: #FFFAEB; 
+    /* Floating shadow effect for the mobile menu */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     padding: 1rem 0;
-    gap: 0; /* Removes the 2rem gap so links stack cleanly */
+    gap: 0; 
   }
 
-  /* The magic class the JavaScript uses to show the menu */
   .main-nav.active {
-    display: flex; 
+    display: flex; /* Class added by JS to open the menu */
   }
 
-  /* Space out the links so they are easy to tap with a thumb */
   .main-nav a {
     padding: 1rem;
     text-align: center;
@@ -141,7 +179,6 @@ body {
     box-sizing: border-box; 
   }
 
-  /* Keep the 'Join' button looking like a button, not stretched across the screen */
   .main-nav .nav-btn {
     width: max-content;
     margin: 0.5rem auto; 
@@ -149,24 +186,19 @@ body {
 }
 
 
-/* =========================================
-   FOOTER STYLES
-   ========================================= */
+/* ==========================================================================
+   04. FOOTER STYLES
+   ========================================================================== */
 
 .main-footer {
-  /* Forces the footer out of the normal layout and pins it to the bottom */
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  
-  /* Give it a specific height so the body padding knows how much space to save */
-  height: 100px; 
-  
+  height: 100px; /* If you add more text to the footer, increase this! */
   background-color: var(--text-dark);
   color: var(--bg-white);
   text-align: center;
-  /* You can adjust padding here to center your text within the 100px height */
   padding: 1.5rem 5%; 
 }
 
@@ -175,7 +207,6 @@ body {
   font-size: 0.9rem;
 }
 
-/* Flexbox for the contact and social links */
 .footer-links {
   display: flex;
   justify-content: center;
@@ -184,35 +215,33 @@ body {
 }
 
 .footer-links a {
-  color: var(--secondary-color); /* Uses UMD Gold for visibility */
+  color: var(--secondary-color); 
   text-decoration: none;
   font-weight: bold;
   transition: opacity 0.3s ease;
 }
 
 .footer-links a:hover {
-  opacity: 0.8; /* Slightly fades the link when hovered */
+  opacity: 0.8; 
 }
 
 .footer-links span {
-  color: var(--text-muted); /* Styles the | dividers */
+  color: var(--text-muted); /* The vertical divider pipes | */
 }
-/* =========================================
-   HOME PAGE - HERO SECTION
-   ========================================= */
 
+
+/* ==========================================================================
+   05. PAGE: HOME
+   ========================================================================== */
+
+/* --- HERO BANNER --- */
 .hero {
-  /* Using UMD Maroon for a strong, branded welcome */
   background-color: var(--primary-color);
   color: var(--bg-white);
-  
-  /* Flexbox to perfectly center the text vertically and horizontally */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  
-  /* Makes the banner nice and tall */
   min-height: 60vh; 
   padding: 2rem 5%;
 }
@@ -224,18 +253,18 @@ body {
 
 .hero-content p {
   font-size: 1.25rem;
-  max-width: 600px; /* Prevents the text from stretching too wide on big screens */
+  max-width: 600px; 
   margin: 0 auto 2rem auto;
 }
 
-/* --- BUTTONS --- */
 .hero-buttons {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  flex-wrap: wrap; /* Allows buttons to stack on small mobile screens */
+  flex-wrap: wrap; 
 }
 
+/* Generic Button Styles */
 .btn {
   padding: 0.75rem 1.5rem;
   text-decoration: none;
@@ -245,13 +274,13 @@ body {
 }
 
 .btn-primary {
-  background-color: var(--secondary-color); /* UMD Gold */
+  background-color: var(--secondary-color);
   color: var(--text-dark);
 }
 
 .btn-primary:hover {
-  background-color: #e6b800; /* A slightly darker gold for the hover effect */
-  transform: translateY(-2px); /* Makes the button "lift" slightly when hovered */
+  background-color: #e6b800; 
+  transform: translateY(-2px); 
 }
 
 .btn-secondary {
@@ -265,34 +294,30 @@ body {
   color: var(--primary-color);
 }
 
-/* =========================================
-   HOME PAGE - QUICK SUMMARY SECTION
-   ========================================= */
-
+/* --- QUICK SUMMARY CARDS --- */
 .quick-summary {
   display: flex;
   justify-content: center;
   gap: 2rem;
   padding: 4rem 5%;
-  flex-wrap: wrap; /* Allows cards to stack on smaller screens */
+  flex-wrap: wrap; 
 }
 
 .summary-card {
-  /* A very light, pastel yellow/gold */
   background-color: #FFFAEB; 
   padding: 2rem;
   border-radius: var(--border-radius);
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-  /* A solid gold border to frame the box */
   border: 1px solid var(--secondary-color); 
   max-width: 400px;
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-/* The Hover Effect */
 .summary-card:hover {
-  transform: translateY(-8px); /* Lifts the card up */
-  box-shadow: 0 15px 30px rgba(0,0,0,0.15); /* Makes the shadow larger */
+  transform: translateY(-8px); 
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15); 
+  border-color: var(--primary-color); /* Changes to Maroon on hover */
 }
 
 .summary-card h3 {
@@ -314,10 +339,8 @@ body {
 .summary-card a:hover {
   text-decoration: underline;
 }
-/* =========================================
-   LIVE EMBED SECTION
-   ========================================= */
 
+/* --- LIVE EMBED SECTION (Instagram) --- */
 .live-embed-section {
   padding: 4rem 5%;
   text-align: center;
@@ -334,27 +357,28 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Safely centers the Instagram embed without using Flexbox */
 .embed-wrapper {
   width: 100%;
-  max-width: 540px; /* Matches Instagram's default maximum width */
-  margin: 0 auto; /* Centers the wrapper perfectly */
+  max-width: 540px; 
+  margin: 0 auto; 
 }
 
-/* Forces the actual iframe to fill its new container perfectly */
 .iframe-container iframe {
   width: 100%;
   height: 100%;
-  border: none; /* Removes the ugly default border */
+  border: none; 
 }
-/* =========================================
-   ABOUT PAGE - INTRO SECTION
-   ========================================= */
 
+
+/* ==========================================================================
+   06. PAGE: ABOUT US
+   ========================================================================== */
+
+/* --- INTRO SECTION --- */
 .about-intro {
   padding: 4rem 5%;
   text-align: center;
-  max-width: 800px; /* Keeps the paragraph from getting too wide and hard to read */
+  max-width: 800px; 
   margin: 0 auto;
 }
 
@@ -368,10 +392,8 @@ body {
   line-height: 1.6;
   color: var(--text-dark);
 }
-/* =========================================
-   ABOUT PAGE - BOARD CARDS (V2)
-   ========================================= */
 
+/* --- MEET THE BOARD CARDS (Slide-Up Overlay) --- */
 .board-section {
   padding: 4rem 5%;
   text-align: center;
@@ -389,30 +411,28 @@ body {
 
 .board-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* 4 cards across on desktop */
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* THE MAIN CARD */
 .board-card {
-  background-color: #FFFAEB; /* Your light yellow tint */
+  background-color: #FFFAEB; 
   border: 1px solid var(--secondary-color);
   border-radius: var(--border-radius);
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
-  position: relative; /* Acts as the anchor for the sliding overlay */
-  overflow: hidden; /* THE MAGIC SCISSORS - Guarantees rounded corners! */
+  position: relative; 
+  overflow: hidden; /* Clips the sliding overlay safely inside the box */
   cursor: pointer;
-  height: 420px; /* Locked height */
+  height: 420px; 
 }
 
-/* THE VISIBLE FRONT */
 .board-photo {
   width: 100%;
-  height: 260px; /* Fixed height for uniformity */
+  height: 260px; 
   object-fit: cover;
   margin: 0; 
 }
@@ -435,25 +455,24 @@ body {
   font-weight: bold;
   text-transform: uppercase;
   font-size: 0.85rem;
-  margin-bottom: auto; /* Pushes the click-hint to the bottom */
+  margin-bottom: auto; 
 }
 
-/* THE HIDDEN OVERLAY (The "Back" of the card) */
 .board-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #FFFAEB; /* Matches the card background */
-  border: 4px solid var(--primary-color); /* Creates a neat border effect when open */
-  box-sizing: border-box; /* Keeps padding and borders strictly inside the box */
+  background-color: #FFFAEB; 
+  border: 4px solid var(--primary-color); 
+  box-sizing: border-box; 
   padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   
-  /* Pushes the overlay entirely below the bottom edge of the card to hide it */
+  /* Starts hidden below the card */
   transform: translateY(100%); 
   transition: transform 0.4s ease-in-out;
 }
@@ -470,24 +489,16 @@ body {
   margin-bottom: 0.75rem;
 }
 
-/* The class added by JS to trigger the slide */
+/* Triggered by JavaScript to show the back of the board card */
 .board-card.is-active .board-overlay {
-  transform: translateY(0); /* Slides it up into view */
+  transform: translateY(0); 
 }
 
-/* --- MOBILE RESPONSIVENESS --- */
-@media (max-width: 900px) {
-  .board-grid { grid-template-columns: repeat(2, 1fr); }
-}
+@media (max-width: 900px) { .board-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .board-grid { grid-template-columns: 1fr; } }
 
-@media (max-width: 600px) {
-  .board-grid { grid-template-columns: 1fr; }
-}
 
-/* =========================================
-   ABOUT PAGE - Q&A FLIP CARDS
-   ========================================= */
-
+/* --- FAQ / Q&A FLIP CARDS (3D Rotation) --- */
 .qa-section {
   padding: 4rem 5%;
   text-align: center;
@@ -503,7 +514,6 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Grid layout to stack them side-by-side on big screens */
 .qa-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -512,39 +522,33 @@ body {
   margin: 0 auto;
 }
 
-/* --- THE 3D FLIP MECHANICS --- */
-
-/* The outer container creates the 3D camera perspective */
+/* 3D Container */
 .flip-card {
   background-color: transparent;
   width: 100%;
-  height: 250px; /* Forces the cards to be identical heights */
-  perspective: 1000px; /* The "3D depth" of the flip */
+  height: 250px; 
+  perspective: 1000px; /* Establishes the 3D depth */
   cursor: pointer;
 }
 
-/* The inner wrapper that actually spins */
 .flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
   text-align: center;
   transition: transform 0.6s ease;
-  transform-style: preserve-3d; /* Tells the browser to remember 3D space */
+  transform-style: preserve-3d; /* Tells the browser it operates in 3D space */
 }
 
-/* This class is added by the JavaScript when clicked */
+/* Triggered by JavaScript to rotate the card */
 .flip-card.is-flipped .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-/* Styles applied to BOTH the front and back */
 .flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  /* Hides the "mirror image" of the text when turned backwards */
-  backface-visibility: hidden; 
   border-radius: var(--border-radius);
   display: flex;
   flex-direction: column;
@@ -552,18 +556,19 @@ body {
   align-items: center;
   padding: 1.5rem;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  
+  /* Hides the back of the card when you are looking at the front */
+  -webkit-backface-visibility: hidden; 
+  backface-visibility: hidden; 
 }
 
-/* FRONT CARD STYLING */
 .flip-card-front {
-  background-color: #FFFAEB; /* Your light gold tint */
+  background-color: #FFFAEB; 
   border: 1px solid var(--secondary-color);
   color: var(--primary-color);
 }
 
-.flip-card-front h3 {
-  margin-bottom: 0.5rem;
-}
+.flip-card-front h3 { margin-bottom: 0.5rem; }
 
 .click-hint {
   font-size: 0.85rem;
@@ -571,72 +576,54 @@ body {
   font-style: italic;
 }
 
-/* BACK CARD STYLING */
 .flip-card-back {
-  background-color: #FFFAEB; /* Changed to the light gold tint */
-  color: var(--primary-color); /* Changed text to Maroon so it is readable */
-  border: 1px solid var(--secondary-color); /* Added the matching border */
-  
-  /* Starts out already flipped backwards */
-  transform: rotateY(180deg); 
+  background-color: #FFFAEB; 
+  color: var(--primary-color); 
+  border: 1px solid var(--secondary-color); 
+  transform: rotateY(180deg); /* Starts flipped around */
 }
 
-/* --- MOBILE RESPONSIVENESS --- */
-@media (max-width: 900px) {
-  .qa-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+@media (max-width: 900px) { .qa-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .qa-grid { grid-template-columns: 1fr; } }
 
-@media (max-width: 600px) {
-  .qa-grid {
-    grid-template-columns: 1fr;
-  }
-}
-/* =========================================
-   GENERAL INFO CARDS
-   ========================================= */
 
+/* ==========================================================================
+   07. PAGE: ACTIVITIES
+   ========================================================================== */
+
+/* --- GENERAL INFO CARDS --- */
 .info-section {
   padding: 4rem 5%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* The Grid Container */
 .info-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
-/* The Main Card */
 .info-card {
-  background-color: #FFFAEB; /* Your light yellow tint */
+  background-color: #FFFAEB; 
   border-radius: var(--border-radius);
   border: 1px solid var(--secondary-color);
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
-  
-  /* This is the magic scissor rule! It forces the top of the image to round off and match the card's border-radius. */
   overflow: hidden; 
 }
 
-/* The Vertical Image */
 .info-card img {
   width: 100%;
-  height: 450px; /* Creates the tall vertical rectangle */
+  height: 450px; 
   object-fit: cover;
-  margin: 0; /* Ensures it sits totally flush against the top and sides */
+  margin: 0; 
 }
 
-/* The Text Container */
 .info-content {
   padding: 1.5rem;
-  
-  /* If one description is longer than the others, this forces the bottom of the cards to stretch and stay perfectly even with each other. */
-  flex-grow: 1; 
+  flex-grow: 1; /* Pushes content down to keep cards equal heights */
 }
 
 .info-content h3 {
@@ -651,199 +638,11 @@ body {
   margin: 0;
 }
 
-/* --- MOBILE RESPONSIVENESS --- */
-@media (max-width: 900px) {
-  .info-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .info-grid {
-    grid-template-columns: 1fr;
-  }
-}
-/* =========================================
-   CUSTOM ICON LINKS GRID
-   ========================================= */
-
-.links-section {
-  padding: 4rem 5%;
-}
-
-.links-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Divides container into 4 equal columns */
-  gap: 1.5rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-/* Base Card Styling */
-/* Strip away the yellow background, borders, and shadows */
-.link-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  color: var(--primary-color);
-  transition: transform 0.2s ease; /* Kept the smooth animation timing */
-}
-
-/* Update hover effect to just float up slightly without box shadows */
-.link-card:hover {
-  transform: translateY(-5px);
-  color: var(--secondary-color); /* Changes text color to give a subtle hover cue */
-}
-
-/* THE GRID SPANNING LOGIC:
-   Small links take up 1 column. Large links take up 2.
-   2 + 2 = 4 (They perfectly match the width of the row above them)
-*/
-.small-link {
-  grid-column: span 1;
-  padding: 2rem 1rem;
-  gap: 0.75rem;
-}
-
-.small-link span {
-  font-size: 0.95rem;
-  font-weight: 600;
-}
-
-.large-link {
-  grid-column: span 2;
-  padding: 4rem 2rem; /* Much thicker padding to make the box physically taller */
-  gap: 1.25rem;
-}
-
-.large-link span {
-  font-size: 1.25rem; /* Larger text for the larger boxes */
-  font-weight: 700;
-}
+@media (max-width: 900px) { .info-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .info-grid { grid-template-columns: 1fr; } }
 
 
-/* --- MOBILE RESPONSIVENESS --- */
-@media (max-width: 800px) {
-  .links-grid {
-    /* At tablet width, turn it into a 2-column grid */
-    grid-template-columns: repeat(2, 1fr); 
-  }
-  
-  /* The large links still span 2 columns, meaning they take up the whole width */
-  .large-link {
-    grid-column: span 2; 
-    padding: 3rem 1.5rem;
-  }
-}
-
-@media (max-width: 500px) {
-  .links-grid {
-    /* At mobile width, stack everything into a single column */
-    grid-template-columns: 1fr; 
-  }
-  
-  /* Reset spans so everything takes up 1 full width column */
-  .small-link, .large-link {
-    grid-column: span 1; 
-  }
-
-  /* Shrink the heights a bit on mobile so they don't take up the whole screen */
-  .card-img-small {
-    height: 150px !important; 
-  }
-  .card-img-large {
-    height: 100px !important; 
-  }
-}
-
-/* Make the top row logos significantly larger */
-.card-img-small {
-  width: 200px; 
-  max-width: 100%; 
-  height: 200px;
-  object-fit: contain;
-  margin-bottom: 0.75rem;
-  
-  /* Fallback for normal browsers */
-  border-radius: 12px; 
-  
-  /* THE COOKIE-CUTTER (Forces the corners to cut on mobile) */
-  -webkit-clip-path: inset(0px round 12px);
-  clip-path: inset(0px round 12px);
-}
-
-/* Make the bottom row logos massively larger */
-.card-img-large {
-  width: 500px; 
-  max-width: 100%; 
-  height: 200px;
-  object-fit: contain;
-  margin-bottom: 0.75rem;
-
-  /* Fallback for normal browsers */
-  border-radius: 20px; 
-  
-  /* THE COOKIE-CUTTER (Forces the corners to cut on mobile) */
-  -webkit-clip-path: inset(0px round 20px);
-  clip-path: inset(0px round 20px);
-}
-/* =========================================
-   GOOGLE FORM EMBED
-   ========================================= */
-
-.google-form-section {
-  padding: 4rem 5%;
-  display: flex;
-  justify-content: center;
-}
-
-/* The Box Holding the Form and Headers */
-.form-wrapper {
-  background-color: #FFFAEB; /* Matches your light yellow theme */
-  border: 1px solid var(--secondary-color);
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  padding: 3rem 2rem;
-  max-width: 750px; /* Gives the form plenty of room to breathe */
-  width: 100%;
-  text-align: center;
-}
-
-/* Header Styling */
-.form-wrapper h2 {
-  color: var(--primary-color);
-  margin-top: 0;
-  margin-bottom: 0.25rem;
-}
-
-/* Subtle Note Styling */
-.form-wrapper small {
-  display: block; /* Forces it onto its own line */
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  margin-bottom: 2rem; /* Creates a nice gap before the form starts */
-}
-
-/* The Iframe Itself */
-.form-wrapper iframe {
-  width: 100%; /* Forces the form to fill the width of the box */
-  min-height: 800px; /* Prevents the dreaded "double scrollbar" inside the form */
-  border: none;
-  border-radius: 8px; /* Slightly rounds the corners of the white Google form */
-}
-
-/* --- MOBILE RESPONSIVENESS --- */
-@media (max-width: 600px) {
-  .form-wrapper {
-    padding: 2rem 1rem; /* Reduces padding so the form fits better on small screens */
-  }
-}
-/* =========================================
-   IMAGE GALLERY (PHOTOWHEEL)
-   ========================================= */
-
+/* --- IMAGE GALLERY (PHOTOWHEEL) --- */
 .gallery-section {
   padding: 4rem 5%;
   text-align: center;
@@ -862,10 +661,9 @@ body {
   margin-bottom: 2rem;
 }
 
-/* The Box Holding Everything */
 .gallery-wrapper {
   position: relative;
-  background-color: #FFFAEB; /* Matches your theme */
+  background-color: #FFFAEB; 
   border: 1px solid var(--secondary-color);
   border-radius: var(--border-radius);
   padding: 1rem;
@@ -875,17 +673,15 @@ body {
   justify-content: center;
 }
 
-/* The Container for the Photos */
 .gallery-track {
   width: 100%;
   position: relative;
   overflow: hidden;
-  border-radius: 8px; /* Smooth corners for the images */
-  background-color: #000; /* Deep background while images load/fade */
-  aspect-ratio: 4 / 3; /* Strictly locks it to a standard landscape box */
+  border-radius: 8px; 
+  background-color: #000; 
+  aspect-ratio: 4 / 3; 
 }
 
-/* The Photos Themselves */
 .gallery-img {
   position: absolute;
   top: 0;
@@ -893,18 +689,16 @@ body {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  opacity: 0; /* Hides all images by default */
-  transition: opacity 0.4s ease-in-out; /* Smooth crossfade effect */
+  opacity: 0; 
+  transition: opacity 0.4s ease-in-out; 
   pointer-events: none;
 }
 
-/* The Class that Makes an Image Visible */
 .gallery-img.active {
   opacity: 1;
   pointer-events: auto;
 }
 
-/* The Navigation Arrows */
 .gallery-btn {
   position: absolute;
   top: 50%;
@@ -929,54 +723,153 @@ body {
   color: white;
 }
 
-.prev-btn { left: -20px; } /* Pulls the button slightly out of the box */
+.prev-btn { left: -20px; } 
 .next-btn { right: -20px; }
 
-/* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 600px) {
-  .gallery-btn {
-    width: 35px;
-    height: 35px;
-    font-size: 1rem;
-  }
+  .gallery-btn { width: 35px; height: 35px; font-size: 1rem; }
   .prev-btn { left: -10px; }
   .next-btn { right: -10px; }
 }
-/* =========================================
-   FAQ FLIP CARDS
-   ========================================= */
 
-/* The outer container gives the 3D depth illusion */
-.flip-card {
-  perspective: 1000px; 
+
+/* ==========================================================================
+   08. PAGE: JOIN / CONTACT
+   ========================================================================== */
+
+/* --- SOCIAL & ICON LINKS GRID --- */
+.links-section {
+  padding: 4rem 5%;
+}
+
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.link-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: transform 0.2s ease; 
+}
+
+.link-card:hover {
+  transform: translateY(-5px);
+  color: var(--secondary-color); 
+}
+
+/* Span Math: Small = 1 column, Large = 2 columns */
+.small-link {
+  grid-column: span 1;
+  padding: 2rem 1rem;
+  gap: 0.75rem;
+}
+
+.small-link span {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.large-link {
+  grid-column: span 2;
+  padding: 4rem 2rem; 
+  gap: 1.25rem;
+}
+
+.large-link span {
+  font-size: 1.25rem; 
+  font-weight: 700;
+}
+
+/* Desktop Logo Image Sizing */
+.card-img-small {
+  width: 200px; 
+  max-width: 100%; 
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 0.75rem;
+  border-radius: 12px; 
+  /* Mobile Safari override */
+  -webkit-clip-path: inset(0px round 12px); 
+  clip-path: inset(0px round 12px);
   background-color: transparent;
 }
 
-/* The inner wrapper that actually spins */
-.flip-card-inner {
-  position: relative;
+.card-img-large {
+  width: 500px; 
+  max-width: 100%; 
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 0.75rem;
+  border-radius: 20px; 
+  /* Mobile Safari override */
+  -webkit-clip-path: inset(0px round 20px); 
+  clip-path: inset(0px round 20px);
+  background-color: transparent;
+}
+
+@media (max-width: 800px) {
+  .links-grid { grid-template-columns: repeat(2, 1fr); }
+  .large-link {
+    grid-column: span 2; 
+    padding: 3rem 1.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .links-grid { grid-template-columns: 1fr; }
+  .small-link, .large-link { grid-column: span 1; }
+
+  .card-img-small { height: 150px !important; }
+  .card-img-large { height: 100px !important; }
+}
+
+
+/* --- GOOGLE FORM EMBED --- */
+.google-form-section {
+  padding: 4rem 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.form-wrapper {
+  background-color: #FFFAEB; 
+  border: 1px solid var(--secondary-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  padding: 3rem 2rem;
+  max-width: 750px; 
   width: 100%;
-  height: 100%;
-  transition: transform 0.6s ease; /* The speed of the flip */
-  transform-style: preserve-3d; /* Required for the 3D effect */
+  text-align: center;
 }
 
-/* The magic class that the JavaScript turns on to flip the card */
-.flip-card.is-flipped .flip-card-inner {
-  transform: rotateY(180deg);
+.form-wrapper h2 {
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 0.25rem;
 }
 
-/* Make sure both sides stack on top of each other */
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari fallback */
-  backface-visibility: hidden; /* Hides the back of the card when it faces away */
+.form-wrapper small {
+  display: block; 
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 2rem; 
 }
 
-/* The back starts already flipped so it's hidden until you click */
-.flip-card-back {
-  transform: rotateY(180deg); 
+.form-wrapper iframe {
+  width: 100%; 
+  min-height: 800px; 
+  border: none;
+  border-radius: 8px; 
+}
+
+@media (max-width: 600px) {
+  .form-wrapper { padding: 2rem 1rem; }
 }
