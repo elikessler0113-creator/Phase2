@@ -3,9 +3,9 @@
  * MISBA CLUB UMD - MASTER JAVASCRIPT FILE
  * ==========================================================================
  * * TABLE OF CONTENTS:
- * 1. MOBILE NAVIGATION TOGGLE (Header Hamburger Menu)
- * 2. IMAGE GALLERY / PHOTOWHEEL (Homepage & Activities Page)
- * 3. ABOUT PAGE INTERACTIVE CARDS (Board Members & FAQ)
+ * 1. MOBILE NAVIGATION TOGGLE (Header Hamburger Menu) - Lines 16-32
+ * 2. IMAGE GALLERY / PHOTOWHEEL (Homepage & Activities Page) - Lines 33-103
+ * 3. ABOUT PAGE INTERACTIVE CARDS (Board Members & FAQ) -Lines 104 - 134
  * ==========================================================================
  */
 
