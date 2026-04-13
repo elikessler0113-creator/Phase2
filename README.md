@@ -62,6 +62,8 @@ Open about.html and scroll to the ``.
 
 Replace the text and image paths inside each <div class="board-card">.
 
+BACKUP FILES - If anything goes catastrphically wrong, there are backups for all files, which contain exact copies of the files as they are as of April 2026. If needed, change the name of the main folder, and move the backup out of the BackupCode folder.
+
 Hosting
 This site is currently deployed using GitHub Pages. Any changes pushed to the main branch will automatically reflect on the live website within a few minutes.
 
