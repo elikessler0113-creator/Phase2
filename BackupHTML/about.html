@@ -1,226 +1,220 @@
-<DOCTYPE html>
-<html>
-  <!-- This is the favicon and the site title (in the tab on your browser).-->
-  <head> 
+<!DOCTYPE html>
+<html lang="en">
+<head> 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MISBA Club | UMD</title> <!-- This is what shows in the tab for a title-->
-  
-  
-  
-  <link rel="stylesheet" href="css/style.css">
+   <!-- Nothing above this line should need to be changed with the current layout.-->
+  <title>MISBA Club | UMD</title> <!-- This is the site title that shows in your browser tab. Please update if desired. It is currently the same on all pages. -->
+  <link rel="stylesheet" href="css/style.css"><!-- IMPORTANT! DO NOT DELETE! This contans all of the page's visual elements. If this is deleted, the page will look gross and will most likely break.-->
 </head>
-<!-- Below this is the header-->
- <body>
-   <header class="main-header">
-      <div class="header-logo">
-        <a href="/"> <img src="assets/images/Logo.jpeg" alt="MISBA Club Logo"> </a>
-      </div>
+<body>
+ <header class="main-header"> <!-- Everything within this section will appear in the header at the top of the page. It will be the same across all pages. If you choose to update it, make sure you update all other pages accordingly. That can be done by copy and pasting the new code in place of the old one. -->
+    <div class="header-logo">
+      <a href="/"> <!-- This links the header logo to the homepage-->
+        <img src="assets/images/Logo.jpeg" alt="MISBA Club Logo"> <!--The header logo. This can be changed just be sure that the file name and path is correct.-->
+      </a>
+    </div>
 
-      <button class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle navigation">
-        <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-      </button>
+    <button class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle navigation"> <!-- This is the hamburger menu that only appears on mobile-->
+      <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
 
-      <nav class="main-nav" id="nav-links"> 
-        <a href="/">Home</a>
-        <a href="about">About Us</a>
-        <a href="activities">Activities</a>
-        <a href="contact" class="nav-btn">Join / Contact</a>
-      </nav>
+    <nav class="main-nav" id="nav-links"> <!-- The links that show on a computer -->
+      <a href="/">Home</a> <!-- the "/" links it to the homepage without showing "/index",which gives the site a cleaner look overall-->
+      <a href="about">About Us</a> 
+      <a href="activities">Activities</a>
+      <a href="contact" class="nav-btn">Join / Contact</a>
+    </nav>
   </header>
 
-  <main>
-<main class="page-content">
+  <main class="page-content">
     
-    <section class="about-intro">
+    <section class="about-intro"> <!-- Overview of the MISBA Club -->
       <h2>About the MIS & BA Club</h2>
-      <p> Our club welcomes all, including MIS and BA majors, whether you're looking to boost your career, advance your academic journey, or simply want to dive deeper into the world of technology. We regularly host guest speakers who provide valuable insights into the industry. We offer events that assist in resume building and career development to help you succeed in your professional pursuits. Beyond that, we also organize club bonding events, creating a supportive community where lasting connections are forged</p>    
+      <p>Our club welcomes all, including MIS and BA majors, whether you're looking to boost your career, advance your academic journey, or simply want to dive deeper into the world of technology. We regularly host guest speakers who provide valuable insights into the industry. We offer events that assist in resume building and career development to help you succeed in your professional pursuits. Beyond that, we also organize club bonding events, creating a supportive community where lasting connections are forged.</p>    
     </section>
 
-   <section class="board-section">
+    <section class="board-section"> <!-- This is the section that contains all of the board member information -->
       <h2>Meet the Executive Board</h2>
-      <p>Click on the profiles to learn more about the boeard members, their field of study, and why they personally love MIS/BA!</p>
+      <p>Click on the profiles to learn more about the board members, their field of study, and why they personally love MIS/BA!</p>
       
-      <div class="board-grid">
+      <div class="board-grid"> <!-- Where the actual cards are located -->
         
-        <div class="board-card">
-          <img src="assets/images/board/P.png" alt="Reid" class="board-photo">
-          <div class="board-info">
-            <h3>Reid</h3>
-            <p class="board-title">President</p>
-            <p class="click-hint">(Click to learn more about Reid!)</p>
+        <div class="board-card"> <!-- This is the front of the first card. -->
+          <img src="assets/images/board/P.png" alt="Reid" class="board-photo"> <!-- This is the photo on the card. When changing photos, it will be easiest to keep the current names, P.png, VP.png, GC1.png, GC2.png. This way you can just upload the new photos, delete the old ones, and the site wil update on its own. If adding more cards and/or changing photos, make sure that they are placed in the correct folder, and that the path is correct. Additionally, make sure to update the "alt" when changing photos so that the description accurately matches the photo. -->
+           <div class="board-info">
+            <h3>Reid</h3> <!-- Name -->
+            <p class="board-title">President</p> <!-- Role -->
+            <p class="click-hint">(Click to learn more about Reid!)</p> <!-- Update to match name -->
           </div>
 
-          <div class="board-overlay">
-            <h3>Reid - President</h3>
+          <div class="board-overlay"> <!-- This is the back of the first card -->
+            <h3>Reid - President</h3> <!-- Name - Role -->
             <hr style="width: 50%; margin: 0.5rem auto 1rem auto; border: 1px solid var(--secondary-color);">
-            <p><strong>Major:</strong> Actuary Science</p>
-            <p><strong>Minor:</strong> Business Analytics</p>
-            <p><strong>Year:</strong> Junior</p>
-            <p><strong>Why I love MISBA:</strong> "Gives me the opportunity to be a part of the cutting edge of something. It also creates different perspectives, and by tracking and anayling, you can make better predictions."</p>
+            <p><strong>Major:</strong> Actuary Science</p> <!-- Major -->
+            <p><strong>Minor:</strong> Business Analytics</p> <!-- Minor. This is optional. If not applicable, it can be deleted entirely. If the card doesn't have this, you can copy it over to that card. -->
+            <p><strong>Year:</strong> Junior</p> <!-- Year in school -->
+            <p><strong>Why I love MISBA:</strong> "Gives me the opportunity to be a part of the cutting edge of something. It also creates different perspectives, and by tracking and analyzing, you can make better predictions."</p> <!-- Why they love the club. -->
           </div>
         </div>
         
-        <div class="board-card">
-          <img src="assets/images/board/VP.png" alt="Haley" class="board-photo">
+        <div class="board-card"> <!-- This is the front of the second card -->
+          <img src="assets/images/board/VP.png" alt="Haley" class="board-photo"> <!-- This is the photo on the card. When changing photos, it will be easiest to keep the current names, P.png, VP.png, GC1.png, GC2.png. This way you can just upload the new photos, delete the old ones, and the site wil update on its own. If adding more cards and/or changing photos, make sure that they are placed in the correct folder, and that the path is correct. Additionally, make sure to update the "alt" when changing photos so that the description accurately matches the photo. -->
           <div class="board-info">
-            <h3>Haley</h3>
-            <p class="board-title">Vice President</p>
-            <p class="click-hint">(Click to learn more about Haley!)</p>
+            <h3>Haley</h3> <!-- Name -->
+            <p class="board-title">Vice President</p> <!-- Role -->
+            <p class="click-hint">(Click to learn more about Haley!)</p> <!-- Update to match name -->
           </div>
 
-          <div class="board-overlay">
-            <h3>Haley - Vice President</h3>
+          <div class="board-overlay"> <!-- This is the back of the second card -->
+            <h3>Haley - Vice President</h3><!-- Name - Role -->
             <hr style="width: 50%; margin: 0.5rem auto 1rem auto; border: 1px solid var(--secondary-color);">
-           <p><strong>Major:</strong> Business Analytics & Human Resource Management</p>
-            <p><strong>Year:</strong> Senior</p>
-            <p><strong>Why I love MISBA:</strong> "I'm especially interested in how it connects to the human side of business, like in HR, where data can be used to understand people better and improve the workplaece."</p>
+           <p><strong>Major:</strong> Business Analytics & Human Resource Management</p> <!-- Major -->
+            <p><strong>Year:</strong> Senior</p> <!-- Year in school -->
+            <p><strong>Why I love MISBA:</strong> "I'm especially interested in how it connects to the human side of business, like in HR, where data can be used to understand people better and improve the workplace."</p> <!-- Why they love the club. -->
           </div>
         </div>
         
-        
-        <div class="board-card">
-          <img src="assets/images/board/GC1.png" alt="Jaci" class="board-photo">
+        <div class="board-card"> <!-- This is the front of the third card. -->
+          <img src="assets/images/board/GC1.png" alt="Jaci" class="board-photo"> <!-- This is the photo on the card. When changing photos, it will be easiest to keep the current names, P.png, VP.png, GC1.png, GC2.png. This way you can just upload the new photos, delete the old ones, and the site wil update on its own. If adding more cards and/or changing photos, make sure that they are placed in the correct folder, and that the path is correct. Additionally, make sure to update the "alt" when changing photos so that the description accurately matches the photo. -->
           <div class="board-info">
-            <h3>Jaci</h3>
-            <p class="board-title">General Coordinator</p>
-            <p class="click-hint">(Click to learn more about Jaci!)</p>
+            <h3>Jaci</h3><!-- Name -->
+            <p class="board-title">General Coordinator</p> <!-- Role -->
+            <p class="click-hint">(Click to learn more about Jaci!)</p> <!-- Update to match name -->
           </div>
 
-          <div class="board-overlay">
-            <h3>Jaci - General Coordinator</h3>
+          <div class="board-overlay"> <!-- This is the back of the third card. -->
+            <h3>Jaci - General Coordinator</h3><!-- Name - Role -->
             <hr style="width: 50%; margin: 0.5rem auto 1rem auto; border: 1px solid var(--secondary-color);">
-            <p><strong>Major:</strong> Business Analytics & Economics</p>
-            <p><strong>Minor:</strong>Spanish</p>
-            <p><strong>Year:</strong> Junior</p>
-            <p><strong>Why I love MISBA:</strong>"I like how MIS/BA connects logic with data and helps turn information into predictions and decisions. I also like how so many companies use analytics, because it broadens my career possibilities."</p>
+            <p><strong>Major:</strong> Business Analytics & Economics</p> <!-- Major -->
+            <p><strong>Minor:</strong> Spanish</p> <!-- Minor. This is optional. If not applicable, it can be deleted entirely. If the card doesn't have this, you can copy it over to that card. -->
+            <p><strong>Year:</strong> Junior</p> <!-- Year in school -->
+            <p><strong>Why I love MISBA:</strong> "I like how MIS/BA connects logic with data and helps turn information into predictions and decisions. I also like how so many companies use analytics, because it broadens my career possibilities."</p> <!-- Why they love the club. -->
           </div>
         </div>
       
-        
-        <div class="board-card">
-          <img src="assets/images/board/GC2.png" alt="John" class="board-photo">
+        <div class="board-card"> <!-- This is the front of the fourth card. -->
+          <img src="assets/images/board/GC2.png" alt="John" class="board-photo"> <!-- This is the photo on the card. When changing photos, it will be easiest to keep the current names, P.png, VP.png, GC1.png, GC2.png. This way you can just upload the new photos, delete the old ones, and the site wil update on its own. If adding more cards and/or changing photos, make sure that they are placed in the correct folder, and that the path is correct. Additionally, make sure to update the "alt" when changing photos so that the description accurately matches the photo. -->
           <div class="board-info">
-            <h3>John</h3>
-            <p class="board-title">General Coordinator</p>
-            <p class="click-hint">(Click to learn more about John!)</p>
+            <h3>John</h3> <!-- Name -->
+            <p class="board-title">General Coordinator</p> <!-- Role -->
+            <p class="click-hint">(Click to learn more about John!)</p> <!-- Update to match name -->
           </div>
 
-          <div class="board-overlay">
-            <h3>John - General Coordinator</h3>
+          <div class="board-overlay"> <!-- This is the back of the fourth card. -->
+            <h3>John - General Coordinator</h3> <!-- Name - Role -->
             <hr style="width: 50%; margin: 0.5rem auto 1rem auto; border: 1px solid var(--secondary-color);">
-            <p><strong>Major:</strong> Business Analytics</p>
-            <p><strong>Minor:</strong>MIS</p>
-            <p><strong>Year:</strong> Junior</p>
-            <p><strong>Why I love MISBA:</strong> "Being able to be a part of a community that works with data and logic. It offers new ways to think that connect to the workforce. You meet peolpe in the career, see what the job is like, and start building a network."</p>
+            <p><strong>Major:</strong> Business Analytics</p> <!-- Major -->
+            <p><strong>Minor:</strong> Management Information Systems</p> <!-- Minor. This is optional. If not applicable, it can be deleted entirely. If the card doesn't have this, you can copy it over to that card. -->
+            <p><strong>Year:</strong> Junior</p> <!-- Year in school -->
+            <p><strong>Why I love MISBA:</strong> "Being able to be a part of a community that works with data and logic. It offers new ways to think that connect to the workforce. You meet people in the career, see what the job is like, and start building a network."</p> <!-- Why they love the club. -->
           </div>
-
         </div>
-        </section>
+        
+        <!-- If you would like to add more cards, you can copy and paste the code from previous cards directly above this line. -->
+      </div> </section>
 
-<section class="qa-section">
+    <section class="qa-section"> <!-- This is the FAQ/Q&A section. It contains the cards which answer frequently asked questions in a fun, flashcard-style manner. Please update as necesarry. -->
       <h2>Frequently Asked Questions</h2>
       <p>Click on each card to reveal the answer!</p>
       
       <div class="qa-grid">
         
-        <div class="flip-card">
+        <div class="flip-card"> 
           <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <h3>Who can join the club?</h3>
-              <p class="click-hint">(Click to flip)</p> <!-- You can remove this if you don't want "(Click to flip)" on the card. You will need to do that for each card. -->
+            <div class="flip-card-front"> <!-- Front of first card. -->
+              <h3>Who can join the club?</h3> <!-- Question -->
+              <p class="click-hint">(Click to flip)</p> <!-- Hint -->
             </div>
-            <div class="flip-card-back">
-              <p>Anyone! While we focus on MIS and Business Analytics, students from all majors at UMD who are interested in the intersection of business and technology are welcome to join.</p>
+            <div class="flip-card-back"> <!-- Back of first card. -->
+              <p>Anyone! While we focus on MIS and Business Analytics, students from all majors at UMD who are interested in the intersection of business and technology are welcome to join.</p> <!-- Answer -->
             </div>
           </div>
         </div>
 
         <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <h3>When do you meet?</h3>
-              <p class="click-hint">(Click to flip)</p>
+          <div class="flip-card-inner"> 
+            <div class="flip-card-front"> <!-- Front of second card. -->
+              <h3>When do you meet?</h3> <!-- Question -->
+              <p class="click-hint">(Click to flip)</p> <!-- Hint -->
             </div>
-            <div class="flip-card-back">
-            <p> All of our meeting dates can be found on our <a href="https://www.instagram.com/misbac_umd" target="_blank">Instagram page!</a> </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <h3>Do I need to have experience in the MIS or BA fields in order to participate?</h3>
-              <p class="click-hint">(Click to flip)</p>
-            </div>
-            <div class="flip-card-back">
-              <p>Not at all! While having experience can be helpful, we don't want that to be a barrier for anyone! Feel free to come to our events and learn as much as you want!</p>
-            </div>
-          </div>
-        </div>
-           <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <h3> Do I need to RSVP for club meetings?</h3>
-              <p class="click-hint">(Click to flip)</p> <!-- You can remove this if you don't want "(Click to flip)" on the card. You will need to do that for each card. -->
-            </div>
-            <div class="flip-card-back">
-              <p>There is rarely a requirement to RSVP before an event. You can find all information on our <a href="https://www.instagram.com/misbac_umd" target="_blank">Instagram page.</a> </p>
+            <div class="flip-card-back"> <!-- Back of second card. -->
+            <p>All of our meeting dates can be found on our <a href="https://www.instagram.com/misbac_umd" target="_blank">Instagram page!</a></p>  <!-- Answer -->
             </div>
           </div>
         </div>
 
         <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <h3>What does the average MISBA club meeting look like?</h3>
-              <p class="click-hint">(Click to flip)</p>
+          <div class="flip-card-inner"> 
+            <div class="flip-card-front"> <!-- Front of third card. -->
+              <h3>Do I need to have experience in the MIS or BA fields in order to participate?</h3> <!-- Question -->
+              <p class="click-hint">(Click to flip)</p> <!-- Hint -->
             </div>
-            <div class="flip-card-back">
-            <p> We have a wide array of events and offerings. A few common topics include, but are certainly not limited to: AI, ethics, competitions, and much more!</p>
+            <div class="flip-card-back"> <!-- Back of third card. -->
+              <p>Not at all! While having experience can be helpful, we don't want that to be a barrier for anyone! Feel free to come to our events and learn as much as you want!</p> <!-- Answer -->
             </div>
           </div>
         </div>
 
         <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <h3>Do I have to be a member of the club to participate in events?</h3>
-              <p class="click-hint">(Click to flip)</p>
+          <div class="flip-card-inner"> 
+            <div class="flip-card-front"> <!-- Front of fourth card. -->
+              <h3>Do I need to RSVP for club meetings?</h3> <!-- Question -->
+              <p class="click-hint">(Click to flip)</p> <!-- Hint -->
             </div>
-            <div class="flip-card-back">
-              <p>Nope! While we encourage you to join the club, you can always attend an event if you're curious about the club. We are excited to see you at a future event!</p>
+            <div class="flip-card-back"> <!-- Back of fourth card. -->
+              <p>There is rarely a requirement to RSVP before an event. You can find all information on our <a href="https://www.instagram.com/misbac_umd" target="_blank">Instagram page.</a></p>  <!-- Answer -->
             </div>
           </div>
         </div>
-      </div>
- 
+
+        <div class="flip-card">
+          <div class="flip-card-inner">  
+            <div class="flip-card-front"> <!-- Front of fifth card. -->
+              <h3>What does the average MISBA club meeting look like?</h3> <!-- Question -->
+              <p class="click-hint">(Click to flip)</p> <!-- Hint -->
+            </div>
+            <div class="flip-card-back"> <!-- Back of fifth card. -->
+            <p>We have a wide array of events and offerings. A few common topics include, but are certainly not limited to: AI, ethics, competitions, and much more!</p>  <!-- Answer -->
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card">
+          <div class="flip-card-inner"> 
+            <div class="flip-card-front"> <!-- Front of sixth card. -->
+              <h3>Do I have to be a member of the club to participate in events?</h3> <!-- Question -->
+              <p class="click-hint">(Click to flip)</p> <!-- Hint -->
+            </div>
+            <div class="flip-card-back"> <!-- Back of sixth card. -->
+              <p>Nope! While we encourage you to join the club, you can always attend an event if you're curious about the club. We are excited to see you at a future event!</p>  <!-- Answer -->
+            </div>
+          </div>
+        </div>
+
+        <!-- If you would like to add more cards, you can copy and paste the code directly above this line.-->
+      </div> 
     </section>
 
-    
-  
-  </main>
-  </main>
-
-<!-- This is your footer.-->
-    <footer class="main-footer">
-      <div class="footer-content">
-        <p>&copy; 2026 Management Information Systems & Business Analytics Club - UMD</p>
-        
-        <div class="footer-links">
-          <a href="mailto:DuluthMISBA@gmail.com">DuluthMISBA@gmail.com</a>
-          <span>|</span>
-          <a href="https://www.linkedin.com/in/mis-ba-duluth/" target="_blank">LinkedIn</a>
-          <span>|</span>
-          <a href="https://www.instagram.com/misbac_umd" target="_blank">Instagram</a>
-        </div>
+  </main> 
+  <footer class="main-footer"> <!-- Everything within this section will appear in the footer at the bottom of the page. It will be the same across all pages. If you choose to update it, make sure you update all other pages accordingly. That can be done by copy and pasting the new code in place of the old one. -->
+    <div class="footer-content">
+      <p>&copy; 2026 Management Information Systems & Business Analytics Club - UMD</p> <!-- Copyrighgt statement -->
+      
+      <div class="footer-links">
+        <a href="mailto:DuluthMISBA@gmail.com">DuluthMISBA@gmail.com</a> <!-- Launches the user's email application to send an email -->
+        <span>|</span>
+        <a href="https://www.linkedin.com/in/mis-ba-duluth/" target="_blank">LinkedIn</a> <!-- The MISBAC Linkedin -->
+        <span>|</span>
+        <a href="https://www.instagram.com/misbac_umd" target="_blank">Instagram</a> <!-- The MISBAC Instagram-->
       </div>
-    </footer>
-    <script src="js/script.js"></script>
- </body>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script> <!-- THIS IS IMPORTANT, DO NOT DELETE IT! This is what tells the page to reference script.js forkey functions. If you delete this, it will damage overall site functionality. -->
+</body>
 </html>
