@@ -22,6 +22,7 @@ The repository is organized to be as straightforward as possible:
 │── activities.html    # Past events and Photowheel gallery
 │── contact.html       # Social links and Google Form embed
 │── robots.txt         # Blocks web scrapers and crawlers
+│── favicon.ico        # Favicon that appears in the browser tab
 │
 ├── css/
 │   └── style.css      # The master stylesheet for all pages
