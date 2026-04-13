@@ -3,14 +3,14 @@
    ========================================================================== 
    
    TABLE OF CONTENTS:
-   01. GLOBAL VARIABLES & BASE STYLES (Colors, fonts, accessibility)
-   02. BASE LAYOUT & FOOTER ANCHORING
-   03. HEADER & NAVIGATION (Includes Mobile Menu)
-   04. FOOTER STYLES
-   05. PAGE: HOME (Hero, Quick Summary, Live Embed)
-   06. PAGE: ABOUT US (Intro, Board Cards, FAQ Flip Cards)
-   07. PAGE: ACTIVITIES (General Info Cards, Image Gallery/Photowheel)
-   08. PAGE: JOIN / CONTACT (Icon Links Grid, Google Form Embed)
+   01. GLOBAL VARIABLES & BASE STYLES (Colors, fonts, accessibility)   Lines 17-65
+   02. BASE LAYOUT & FOOTER ANCHORING                                  Lines 66-84
+   03. HEADER & NAVIGATION (Includes Mobile Menu)                      Lines 85-188
+   04. FOOTER STYLES                                                   Lines 189-232
+   05. PAGE: HOME (Hero, Quick Summary, Live Embed)                    Lines 233-372
+   06. PAGE: ABOUT US (Intro, Board Cards, FAQ Flip Cards)             Lines 373-589
+   07. PAGE: ACTIVITIES (General Info Cards, Image Gallery/Photowheel) Lines 590-735
+   08. PAGE: JOIN / CONTACT (Icon Links Grid, Google Form Embed)       Lines 736-876
    ========================================================================== */
 
 
