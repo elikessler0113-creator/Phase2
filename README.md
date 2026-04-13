@@ -64,3 +64,7 @@ Replace the text and image paths inside each <div class="board-card">.
 
 Hosting
 This site is currently deployed using GitHub Pages. Any changes pushed to the main branch will automatically reflect on the live website within a few minutes.
+
+GEMINI CHAT LOGS:
+Google Gemini 3.1 Pro was used to assist with building this website. A complete chat log that has been copied and pasted directy into a Google document is linked below for reference:
+https://docs.google.com/document/d/1OZviQjiHrFF94jqeXLR-12MKMpIQTZ1XdaVyAEsPBvU/edit?usp=sharing
